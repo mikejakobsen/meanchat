@@ -1,5 +1,11 @@
+# Static mappen
+static
+
 # Node Dependencies
 node_modules
+
+# IntelliJ Shit
+.idea/
 
 # Bower
 bower_modules
