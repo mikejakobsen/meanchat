@@ -29,7 +29,7 @@ var app = {
 
             // Når brugeren klikker på creat room - emit 'createRoom
             $('.room-create button').on('click', function(e) {
-                var inputEle = $("input[name='title']");
+                var inputEle = $('input[name='title']');
                 if(inputEle.val() !== '') {
                     socket.emit('createRoom', inputEle.val());
                     inputEle.val('');
@@ -62,7 +62,7 @@ var app = {
             // Tryk Send - Kalder newMessage
             $(".chat-message button").on('click', function(e) {
 
-                var textareaEle = $("textarea[name='message']");
+                var textareaEle = $('textarea[name='message']');
                 if(textareaEle.val() !== '') {
                     // Beskeden indeholder textfeltet, username og Date.now()
                     var message = { 
