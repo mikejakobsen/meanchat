@@ -1,0 +1,67 @@
+<% include head.ejs %>
+
+<div class="container">
+	<div class="row">
+		<div class="form col-xs-6">
+			<div class="social-buttons">
+				<div><span>Login</span> via</div>
+				<a href="/auth/facebook">
+					Facebook
+				</a>
+
+				<a href="/auth/twitter">
+					Twitter
+				</a>
+			</div>
+
+			<div class="form-line"></div>
+
+			<div>
+				<form action="/register" class="register-form" method="post" >
+					<input type="text" name="username" placeholder="username"/>
+					<input type="password" name="password" placeholder="password"/>
+					<button type="submit">create</button>
+					<p class="message">Already registered? <a href="#">Sign In</a></p>
+					<% if (errors != null && showRegisterForm != null && showRegisterForm === true) { %>
+						// Viser status
+						<% errors.forEach(function(err){ %>
+							<p class="message error"><%= err %></p>
+						<% }); %>
+					<% } %>
+				</form>
+				<form action="/login" class="login-form" method="post">
+					<input type="text" name="username" placeholder="username"/>
+					<input type="password" name="password" placeholder="password"/>
+					<button type="submit">login</button>
+					<p class="message">Not registered? <a href="#">Create a user</a></p>
+					<% if (errors != null && showRegisterForm == null) { %>
+						<% errors.forEach(function(err){ %>
+							// Ved Fejl.. Styles med error class
+							<p class="message error"><%= err %></p>
+						<% }); %>
+					<% } if (success != null && showRegisterForm == null) { %>
+						// Success styles med denne class
+						<p class="message success"><%= success %></p>
+					<% } %>
+				</form>
+			</div>
+		</div> <!-- end form -->
+	</div> <!-- end row -->
+</div> <!-- end container -->
+
+<script src='/bower_components/jquery/dist/jquery.min.js'></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/main.js"></script>
+
+<% if(showRegisterForm != null && showRegisterForm === true) { %>
+	<script>
+		$('.register-form').show(); $('.login-form, .social-buttons, .form-line').hide();
+	</script>
+<% } %>
+<script>
+	$('.message a').click(function(){
+		$('form, .social-buttons, .form-line').animate({height: "toggle", opacity: "toggle"}, "slow");
+	});
+</script>
+  </body>
+</html>

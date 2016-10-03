@@ -1,0 +1,13 @@
+# Node Dependencies
+node_modules
+
+# Bower
+bower_modules
+
+# Logs
+debug.log
+npm-debug.log
+
+# Config
+
+app/config/config.json

@@ -1,0 +1,46 @@
+<% include head.ejs %>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-6">
+
+			<div class="controls">
+				<a href="/ses" class="logout-btn">Logout</a>
+			</div>
+
+			<div class="room">
+				<div class="room-header clearfix">
+					<div class="room-about">
+						<div class="room-title">Rooms</div>
+						<div class="room-num-rooms"><%= rooms.length %> Rooms</div>
+					</div>
+				</div> <!-- end room-header -->
+
+				<div class="room-create clearfix">
+					<input type="text" name="title" autofocus placeholder ="Create a new room">
+					<button>Create</button>
+				</div> <!-- end room-create -->
+
+				<div class="room-list">
+					<ul>
+						<% if(rooms.length > 0) { %>
+							<% rooms.forEach(function(room) { %>
+								<a href="/chat/<%= room.id %>"><li class="room-item"><%= room.title %></li></a>
+							<% }); %>
+						<% } else { %>
+							<!-- Else - Hvis der ingen rum er oprettet -->
+							<p class="message">Endnu ingen rum - opret et :)</p>
+						<% } %>
+					</ul>
+				</div> <!-- end room-list -->
+			</div> <!-- end room -->
+		</div> <!-- end col-xs-6 -->
+	</div> <!-- end row -->
+</div> <!-- end container -->
+<script src='/bower_components/jquery/dist/jquery.min.js'></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/main.js"></script>
+
+<!-- For at køre room funktionaliteten -->
+<script>$(function(){app.rooms()});</script>
+  </body>
+</html>
