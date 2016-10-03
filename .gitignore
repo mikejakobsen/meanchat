@@ -8,6 +8,12 @@ bower_modules
 debug.log
 npm-debug.log
 
+# Codekit
+
+config.codekit
+src/styles/.sass-cache/
+
+
 # Config
 
 app/config/config.json
