@@ -19,7 +19,7 @@ var app = {
                 // Frontend fejl. Fx. ved oprettelse af bruger
                 // Tager fat i .room-create
                 $('.room-create p.message').remove();
-                if(room.error !== null){
+                if(room.error != null){
                     // room.error tilgåes fra backend
                     $('.room-create').append(`<p class="message error">${room.error}</p>`);
                 }else{
@@ -74,6 +74,7 @@ var app = {
                     socket.emit('newMessage', roomId, message);
                     textareaEle.val('');
                     app.helpers.addMessage(message);
+                    console.log(message);
                 }
             });
             

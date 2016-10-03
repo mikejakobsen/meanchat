@@ -9,7 +9,9 @@
      */
 
     var MessageSchema = new Mongoose.Schema({
-        message: { type: String, required: true}
+        content: { type: String, required: true},
+        date: { type: Date, default: Date.now },
+        username: { type: String, required: true}
     });
 
     var messageModel = Mongoose.model('message', MessageSchema);

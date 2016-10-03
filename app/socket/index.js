@@ -105,6 +105,7 @@ var ioEvents = function(io) {
 			// socket.emit('addMessage', message);
 			
 			socket.broadcast.to(roomId).emit('addMessage', message);
+			console.log(Message);
 		});
 
 	});

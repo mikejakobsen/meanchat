@@ -5,7 +5,7 @@ var Mongoose 	= require('mongoose');
 var logger 		= require('../logger');
 
 // Localhost forbindelse - Chat DB
-Mongoose.connect("mongodb://localhost/chat");
+Mongoose.connect('mongodb://localhost/chat');
 
 // Fejl
 Mongoose.connection.on('error', function(err) {
@@ -19,7 +19,7 @@ Mongoose.Promise = global.Promise;
 module.exports = { Mongoose, 
 	models: {
 		user: require('./schemas/user.js'),
-		room: require('./schemas/room.js')
-        //messages: require('./schemas/message.js')
+		room: require('./schemas/room.js'),
+        messages: require('./schemas/message.js')
 	}
 };
