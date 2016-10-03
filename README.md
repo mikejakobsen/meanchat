@@ -10,6 +10,8 @@ npm install
 
 bower install
 
+Create config.json file in App/Config
+
 npm start
 ```
 
