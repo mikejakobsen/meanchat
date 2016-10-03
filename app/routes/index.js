@@ -41,7 +41,7 @@ router.post('/login', passport.authenticate('local', {
 }));
 
 // Create user - Old School
-router.post('/opret', function(req, res, next) {
+router.post('/register', function(req, res, next) {
 
     // Post variablerne req.body.username og req.body.password
     // req.body - requst body

@@ -7,7 +7,7 @@ var adapter = require('socket.io-redis');
 var Room = require('../models/room');
 
 /**
- * Encapsulates all code for emitting and listening to socket events
+ * Socket Events
  *
  */
 var ioEvents = function(io) {
@@ -15,13 +15,14 @@ var ioEvents = function(io) {
 	// Rooms namespace
 	io.of('/rooms').on('connection', function(socket) {
 
-		// Create a new room
+		// Opret et nyt rum
 		socket.on('createRoom', function(title) {
 			Room.findOne({'title': new RegExp('^' + title + '$', 'i')}, function(err, room){
 				if(err) throw err;
 				if(room){
-					socket.emit('updateRoomsList', { error: 'Room title already exists.' });
+					socket.emit('updateRoomsList', { error: 'Findes allerede' });
 				} else {
+                    // Kalder create - hvis rummet ikke findes
 					Room.create({ 
 						title: title
 					}, function(err, newRoom){
@@ -37,34 +38,33 @@ var ioEvents = function(io) {
 	// Chatroom namespace
 	io.of('/chatroom').on('connection', function(socket) {
 
-		// Join a chatroom
+		// Join chatroom
 		socket.on('join', function(roomId) {
 			Room.findById(roomId, function(err, room){
 				if(err) throw err;
 				if(!room){
-					// Assuming that you already checked in router that chatroom exists
-					// Then, if a room doesn't exist here, return an error to inform the client-side.
+                    // Join Room -> By id
+					// Hvis stien ikke findes
 					socket.emit('updateUsersList', { error: 'Room doesnt exist.' });
 				} else {
-					// Check if user exists in the session
+					//  Har brugeren allerede en session - return void
 					if(socket.request.session.passport == null){
 						return;
 					}
 
 					Room.addUser(room, socket, function(err, newRoom){
 
-						// Join the room channel
+						// Join rummet
 						socket.join(newRoom.id);
 
-						Room.getUsers(newRoom, socket, function(err, users, cuntUserInRoom){
+						Room.getUsers(newRoom, socket, function(err, users, countUserInRoom){
 							if(err) throw err;
 							
-							// Return list of all user connected to the room to the current user
+                            // Return -> listen med alle brugeren til den forbundne bruger
 							socket.emit('updateUsersList', users, true);
 
-							// Return the current user to other connecting sockets in the room 
-							// ONLY if the user wasn't connected already to the current room
-							if(cuntUserInRoom === 1){
+							// Return list til alle andre
+							if(countUserInRoom === 1){
 								socket.broadcast.to(newRoom.id).emit('updateUsersList', users[users.length - 1]);
 							}
 						});
@@ -73,7 +73,7 @@ var ioEvents = function(io) {
 			});
 		});
 
-		// When a socket exits
+        // Når de smutter igen -> disconnect
 		socket.on('disconnect', function() {
 
 			// Check if user exists in the session
@@ -83,7 +83,7 @@ var ioEvents = function(io) {
 
 			// Find the room to which the socket is connected to, 
 			// and remove the current user + socket from this room
-			Room.removeUser(socket, function(err, room, userId, cuntUserInRoom){
+			Room.removeUser(socket, function(err, room, userId, countUserInRoom){
 				if(err) throw err;
 
 				// Leave the room channel
@@ -91,7 +91,7 @@ var ioEvents = function(io) {
 
 				// Return the user id ONLY if the user was connected to the current room using one socket
 				// The user id will be then used to remove the user from users list on chatroom page
-				if(cuntUserInRoom === 1){
+				if(countUserInRoom === 1){
 					socket.broadcast.to(room.id).emit('removeUser', userId);
 				}
 			});
@@ -108,7 +108,7 @@ var ioEvents = function(io) {
 		});
 
 	});
-}
+};
 
 /**
  * Initialize Socket.io

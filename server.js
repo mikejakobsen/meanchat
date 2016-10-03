@@ -35,9 +35,11 @@ app.use(flash());
 app.use('/', routes);
 
 // 400 Alle ubenyttede stier ledes til Index
+/*
 app.use(function(req, res, next) {
   res.status(404).sendFile(process.cwd() + '/app/views/404.html');
 });
+*/
 
 // Lyt på port 3000
 ioServer.listen(3000);

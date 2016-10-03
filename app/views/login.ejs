@@ -23,7 +23,6 @@
 					<button type="submit">create</button>
 					<p class="message">Already registered? <a href="#">Sign In</a></p>
 					<% if (errors != null && showRegisterForm != null && showRegisterForm === true) { %>
-						// Viser status
 						<% errors.forEach(function(err){ %>
 							<p class="message error"><%= err %></p>
 						<% }); %>
@@ -36,11 +35,9 @@
 					<p class="message">Not registered? <a href="#">Create a user</a></p>
 					<% if (errors != null && showRegisterForm == null) { %>
 						<% errors.forEach(function(err){ %>
-							// Ved Fejl.. Styles med error class
 							<p class="message error"><%= err %></p>
 						<% }); %>
 					<% } if (success != null && showRegisterForm == null) { %>
-						// Success styles med denne class
 						<p class="message success"><%= success %></p>
 					<% } %>
 				</form>
