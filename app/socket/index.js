@@ -107,6 +107,8 @@
                 // socket.emit('addMessage', message);
 
                 socket.broadcast.to(roomId).emit('addMessage', message);
+                // #Todo - Save message
+                console.log(message);
             });
 
         });
