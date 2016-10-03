@@ -145,8 +145,11 @@ var app = {
         // Adding a new message to chat history
         addMessage: function(message){
             message.date      = (new Date(message.date)).toLocaleString();
+            console.log(message.date);
             message.username  = this.encodeHTML(message.username);
+            console.log(message.username);
             message.content   = this.encodeHTML(message.content);
+            console.log(message.content);
 
             var html = `<li>
             <div class="message-data">
@@ -159,6 +162,15 @@ var app = {
 
             // Keep scroll bar down
             $(".chat-history").animate({ scrollTop: $('.chat-history')[0].scrollHeight}, 1000);
+        },
+
+        // Gem besked -> Mongoose - MessageSchema
+        // #Todo Gem beskeder
+        addMessage: function(message){
+            message.date      = (new Date(message.date)).toLocaleString();
+            message.username  = this.encodeHTML(message.username);
+            message.content   = this.encodeHTML(message.content);
+            console.log(message.date, message.username, message.content);
         },
 
         // Update number of rooms
