@@ -1,17 +1,21 @@
-'use strict';
+(function () {
+    'use strict';
 
-var Mongoose  = require('mongoose');
+    var Mongoose  = require('mongoose');
 
-/**
- * Each connection object represents a user connected through a unique socket.
- * Each connection object composed of {userId + socketId}. Both of them together are unique.
- *
- */
-var RoomSchema = new Mongoose.Schema({
-    title: { type: String, required: true },
-    connections: { type: [{ userId: String, socketId: String }]}
-});
+    /**
+     * Hver forbindelse er en bruger forbundet via en socket
+     * Hver forbindelse er et userId + socketID
+     *
+     */
+    var RoomSchema = new Mongoose.Schema({
+        // #Todo add more validation
+        title: { type: String, required: true },
+        connections: { type: [{ userId: String, socketId: String }]}
+    });
 
-var roomModel = Mongoose.model('room', RoomSchema);
+    var roomModel = Mongoose.model('room', RoomSchema);
 
-module.exports = roomModel;
+    // Gør den generelt tilgængelig
+    module.exports = roomModel;
+}());

@@ -1,72 +1,88 @@
-'use strict';
+(function () {
+    'use strict';
 
-var Mongoose 	= require('mongoose');
-var bcrypt      = require('bcrypt-nodejs');
+    var Mongoose 	= require('mongoose');
+    // Bcryup for at hash/salt password
+    // https://github.com/kelektiv/node.bcrypt.js
+    var bcrypt      = require('bcrypt-nodejs');
 
-const SALT_WORK_FACTOR = 10;
-const DEFAULT_USER_PICTURE = "/img/user.jpg";
+    // Const da de ikke skal ændres
+    const SALTROUNDS = 10;
+    const DEFAULT_USER_PICTURE = '/img/user.jpg';
 
-/**
- * Every user has a username, password, socialId, and a picture.
- * If the user registered via username and password(i.e. LocalStrategy), 
- *      then socialId should be null.
- * If the user registered via social authenticaton, 
- *      then password should be null, and socialId should be assigned to a value.
- * 2. Hash user's password
- *
- */
-var UserSchema = new Mongoose.Schema({
-    username: { type: String, required: true},
-    password: { type: String, default: null },
-    socialId: { type: String, default: null },
-    picture:  { type: String, default:  DEFAULT_USER_PICTURE}
-});
+    /**
+     * Hver bruger har et username, password, socialId og et picture
+     * If the user registered via username and password(i.e. LocalStrategy),
+     * Hvis brugeren opretter vil Passport LocalStrategy - Og får username og password
+     * så vil socialId være null.
+     *
+     * Hvis brugeren opretter via Facebook/Twitter.
+     * vil password være null, og socialId får så en værdi fra Passport.js
+     *
+     */
 
-/**
- * Before save a user document, Make sure:
- * 1. User's picture is assigned, if not, assign it to default one.
- * 2. Hash user's password
- *
- */
-UserSchema.pre('save', function(next) {
-    var user = this;
+    var UserSchema = new Mongoose.Schema({
+        username: { type: String, required: true},
+        // Default: null da social ikke behøver password
+        // og alm bruger ikke behover socialId
+        password: { type: String, default: null },
+        socialId: { type: String, default: null },
+        picture:  { type: String, default:  DEFAULT_USER_PICTURE}
+    });
 
-    // ensure user picture is set
-    if(!user.picture){
-        user.picture = DEFAULT_USER_PICTURE;
-    }
+    /**
+     * Før brugeren gemmes.
+     * if !user.picture -> giv ham default
+     * Social Profil billeder hentes direkte fra url
+     * Fx. https://pbs.twimg.com/profile_images/507518430501552129/DBtWTye8_normal.jpeg
+     * den får så absolut path til '/img/user.jpg' ellers.
+     *
+     */
+    UserSchema.pre('save', function(next) {
+        var user = this;
 
-    // only hash the password if it has been modified (or is new)
-    if (!user.isModified('password')) return next();
+        // Hvis billedet ikke er defineret -> DEFAULT_USER_PICTURE
+        // Const da det er en fast værdi
+        if(!user.picture){
+            user.picture = DEFAULT_USER_PICTURE;
+        }
 
-    // generate a salt
-    bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
-        if (err) return next(err);
+        // Videre hvis password ikke er blevet ændret
+        if (!user.isModified('password')) return next();
 
-        // hash the password using our new salt
-        bcrypt.hash(user.password, salt, null, function(err, hash) {
+        // https://github.com/ncb000gt/node.bcrypt.js/
+        // Lav et salt og hash på hver sit funcktion call
+        bcrypt.genSalt(SALTROUNDS, function(err, salt) {
             if (err) return next(err);
 
-            // override the cleartext password with the hashed one
-            user.password = hash;
-            next();
+            // Kør hash på user.password, med det salt vi lige lavede
+            bcrypt.hash(user.password, salt, null, function(err, hash) {
+                if (err) return next(err);
+
+                // overskriv user.password med hash værdien
+                // der gemmes.
+                user.password = hash;
+                next();
+            });
         });
     });
-});
 
-/**
- * Create an Instance method to validate user's password
- * This method will be used to compare the given password with the passwoed stored in the database
- * 
- */
-UserSchema.methods.validatePassword = function(password, callback) {
-    bcrypt.compare(password, this.password, function(err, isMatch) {
-        if (err) return callback(err);
-        callback(null, isMatch);
-    });
-};
+    /**
+     * Valider brugerens password
+     * function til at sammenligne brugerens input med hash værsionen
+     * Kilde: http://devsmash.com/blog/password-authentication-with-mongoose-and-bcrypt
+     *
+     */
+    UserSchema.methods.validatePassword = function(password, callback) {
+        bcrypt.compare(password, this.password, function(err, isMatch) {
+            if (err) return callback(err);
+            callback(null, isMatch);
+        });
+    };
 
-// Create a user model
-var userModel = Mongoose.model('user', UserSchema);
+    // Lav User Schemaet
+    var userModel = Mongoose.model('user', UserSchema);
 
-module.exports = userModel;
+    // Eksport userModel
+    module.exports = userModel;
+}());
