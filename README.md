@@ -1,9 +1,6 @@
 
-![alt tag](http://www.mikejakobsen.com/mike.png)
 
-# mikejakobsen.com
-
-School Project Mean Chat
+#School Project Mean Chat
 
 ```
 npm install
@@ -24,5 +21,7 @@ Gulp images
 Gulp styles
 
 Gulp scripts
+
+Gulp beautify
 
 ```

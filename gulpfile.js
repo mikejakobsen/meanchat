@@ -7,6 +7,7 @@ var jshint = require('gulp-jshint');
 var imagemin = require('gulp-imagemin'),
     cache = require('gulp-cache');
 var sass = require('gulp-sass');
+var beautify = require('gulp-beautify');
 
 gulp.task('images', function(){
     gulp.src('src/img/**/*')
@@ -23,7 +24,7 @@ gulp.task('styles', function(){
         }}))
         .pipe(sass())
         .pipe(autoprefixer('last 2 versions'))
-        .pipe(gulp.dest('static/css/'))
+        .pipe(gulp.dest('static/css/'));
 });
 
 gulp.task('scripts', function(){
@@ -36,15 +37,22 @@ gulp.task('scripts', function(){
         .pipe(jshint())
         .pipe(jshint.reporter('default'))
         .pipe(babel())
-        .pipe(gulp.dest('static/js/'))
+        .pipe(gulp.dest('static/js/'));
+});
+
+
+gulp.task('beautify', function() {
+    gulp.src('./src/*.js')
+    .pipe(beautify({indentSize: 2}))
+    .pipe(gulp.dest('static/js/'))
 });
 
 gulp.task('default', function(){
-    gulp.watch("src/styles/**/*.sass", ['styles']);
-    gulp.watch("src/js/**/*.js", ['scripts']);
+    gulp.watch('src/styles/**/*.sass', ['styles']);
+    gulp.watch('src/js/**/*.js', ['scripts']);
 });
 
 gulp.task('watch', function(){
-    gulp.watch("src/styles/**/*.sass", ['styles']);
-    gulp.watch("src/js/**/*.js", ['scripts']);
+    gulp.watch('src/styles/**/*.sass', ['styles']);
+    gulp.watch('src/js/**/*.js', ['scripts']);
 });
