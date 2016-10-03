@@ -1,22 +1,26 @@
-'use strict';
+(function () {
+    'use strict';
 
-var winston = require('winston');
+    // https://www.npmjs.com/package/winston
 
-var logger = new (winston.Logger)({
-	transports: [
-		new (winston.transports.File)({
-			level: 'debug',
-			json: true,
-			filename: './debug.log',
-			handleExceptions: true
-		}),
-		new (winston.transports.Console)({
-			level: 'debug',
-			json: true,
-			handleExceptions: true
-		})
-	],
-	exitOnError: false
-});
+    var winston = require('winston');
 
-module.exports = logger;
+    var logger = new (winston.Logger)({
+        transports: [
+            new (winston.transports.File)({
+                level: 'debug',
+                json: true,
+                filename: './debug.log',
+                handleExceptions: true
+            }),
+            new (winston.transports.Console)({
+                level: 'debug',
+                json: true,
+                handleExceptions: true
+            })
+        ],
+        exitOnError: false
+    });
+
+    module.exports = logger;
+}());

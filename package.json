@@ -38,16 +38,20 @@
     "winston": "^2.2.0"
   },
   "devDependencies": {
-    "browser-sync": "2.6.5",
+    "browser-sync": "^2.6.5",
     "gulp": "3.8.11",
     "gulp-autoprefixer": "2.1.0",
     "gulp-babel": "5.1.0",
     "gulp-beautify": "^2.0.0",
     "gulp-cache": "0.2.8",
+    "gulp-cssmin": "^0.1.7",
     "gulp-imagemin": "2.2.1",
     "gulp-jshint": "1.10.0",
+    "gulp-nodemon": "^2.2.1",
     "gulp-plumber": "1.0.0",
     "gulp-rename": "1.2.2",
-    "gulp-sass": "^2.3.2"
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "nodemon": "^1.10.2"
   }
 }

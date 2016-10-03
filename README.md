@@ -1,5 +1,3 @@
-
-
 #School Project Mean Chat
 
 ```
@@ -9,19 +7,23 @@ bower install
 
 Create config.json file in App/Config
 
-npm start
+gulp watch
 ```
 
 ### Gulp
 
 ```Javascript
 
-Gulp images
+Gulp images // Compress images
 
-Gulp styles
+Gulp styles // Compile SASS
 
-Gulp scripts
+Gulp scripts // JsHint scripts, compress and export 
 
-Gulp beautify
+Gulp beautify // Fix the indentation
+
+Gulp watch // Run server, and watch for changes
+
+Gulp lint // Lint the app 
 
 ```

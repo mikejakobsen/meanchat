@@ -1,143 +1,143 @@
 (function () {
-'use strict';
-// JsHint mener jeg skal pakke 'use strict';
-// Ind i en IFFI
+    'use strict';
+    // JsHint mener jeg skal pakke 'use strict';
+    // Ind i en IFFI
 
-// Import roomModel og User model
-var roomModel   = require('../database').models.room;
-var User 		= require('../models/user');
+    // Import roomModel og User model
+    var roomModel   = require('../database').models.room;
+    var User 		= require('../models/user');
 
-// Gem functioner fra roomModel i localScope
-var create = function (data, callback){
-    // #Todo - Constructor skal starte med stort #roomModel
-	var newRoom = new roomModel(data);
-	newRoom.save(callback);
-};
+    // Gem functioner fra roomModel i localScope
+    var create = function (data, callback){
+        // #Todo - Constructor skal starte med stort #roomModel
+        var newRoom = new roomModel(data);
+        newRoom.save(callback);
+    };
 
-var find = function (data, callback){
-	roomModel.find(data, callback);
-};
+    var find = function (data, callback){
+        roomModel.find(data, callback);
+    };
 
-var findOne = function (data, callback){
-	roomModel.findOne(data, callback);
-};
+    var findOne = function (data, callback){
+        roomModel.findOne(data, callback);
+    };
 
-var findById = function (id, callback){
-	roomModel.findById(id, callback);
-};
+    var findById = function (id, callback){
+        roomModel.findById(id, callback);
+    };
 
-/*
-var findByIdAndUpdate = function(id, data, callback){
-	roomModel.findByIdAndUpdate(id, data, { new: true }, callback);
-};
-/*
+    /*
+       var findByIdAndUpdate = function(id, data, callback){
+       roomModel.findByIdAndUpdate(id, data, { new: true }, callback);
+       };
+    /*
 
-/**
- * Tilføj bruger, sammen med Socket
- *
- */
-var addUser = function(room, socket, callback){
-	
-	// Hent BrugerID
-	var userId = socket.request.session.passport.user;
+    /**
+     * Tilføj bruger, sammen med Socket
+     *
+     */
+    var addUser = function(room, socket, callback){
 
-	// Push en ny forbindelse {userId + socketId}
-	// Read: http://stackoverflow.com/questions/35036805/socket-io-doesnt-work-both-way/35039060
-	var conn = { userId: userId, socketId: socket.id};
-	room.connections.push(conn);
-    // #Todo er callback nødvendig?
-	room.save(callback);
-};
+        // Hent BrugerID
+        var userId = socket.request.session.passport.user;
 
-/**
- *  Hent alle brugere
- *  Måske bruge passport.socket.io i stedet
- *  https://github.com/jfromaniello/passport.socketio
- */
-var getUsers = function(room, socket, callback){
+        // Push en ny forbindelse {userId + socketId}
+        // Read: http://stackoverflow.com/questions/35036805/socket-io-doesnt-work-both-way/35039060
+        var conn = { userId: userId, socketId: socket.id};
+        room.connections.push(conn);
+        // #Todo er callback nødvendig?
+        room.save(callback);
+    };
 
-	var users = [], vis = {}, cunt = 0;
-	var userId = socket.request.session.passport.user;
+    /**
+     *  Hent alle brugere
+     *  Måske bruge passport.socket.io i stedet
+     *  https://github.com/jfromaniello/passport.socketio
+     */
+    var getUsers = function(room, socket, callback){
 
-    // ForEach forbindelse til room, then ->
-	room.connections.forEach(function(conn){
+        var users = [], vis = {}, cunt = 0;
+        var userId = socket.request.session.passport.user;
 
-		// Tjek om brugeren har forbindlse - tilføj ham #cunt++
-		if(conn.userId === userId){
-			cunt++;
-		}
+        // ForEach forbindelse til room, then ->
+        room.connections.forEach(function(conn){
 
-        // Lav et array med alle brugeren, for at vise de aktive
-        // Henter UserID for at printe profilbillede
-		if(!vis[conn.userId]){
-			users.push(conn.userId);
-		}
-		vis[conn.userId] = true;
-	});
+            // Tjek om brugeren har forbindlse - tilføj ham #cunt++
+            if(conn.userId === userId){
+                cunt++;
+            }
 
-	users.forEach(function(userId, i){
-        // Hent brugerens ID (findById)
-        // Tiløj til bruger array
-        // = Opret et users object
-		User.findById(userId, function(err, user){
-			if (err) { return callback(err); }
-			users[i] = user;
-			if(i + 1 === users.length){
-				return callback(null, users, cunt);
-			}
-		});
-	});
-};
+            // Lav et array med alle brugeren, for at vise de aktive
+            // Henter UserID for at printe profilbillede
+            if(!vis[conn.userId]){
+                users.push(conn.userId);
+            }
+            vis[conn.userId] = true;
+        });
 
-/**
- * Fjern Bruger - når forbindelsen ryder
- *
- */
-var removeUser = function(socket, callback){
+        users.forEach(function(userId, i){
+            // Hent brugerens ID (findById)
+            // Tiløj til bruger array
+            // = Opret et users object
+            User.findById(userId, function(err, user){
+                if (err) { return callback(err); }
+                users[i] = user;
+                if(i + 1 === users.length){
+                    return callback(null, users, cunt);
+                }
+            });
+        });
+    };
 
-	// Hent brugerID fra Socket.io
-	// Read: http://www.scotthasbrouck.com/blog/2016/3/18/passportjs-express-session-with-sockeio
-	var userId = socket.request.session.passport.user;
+    /**
+     * Fjern Bruger - når forbindelsen ryder
+     *
+     */
+    var removeUser = function(socket, callback){
 
-	find(function(err, rooms){
-		if(err) { return callback(err); }
+        // Hent brugerID fra Socket.io
+        // Read: http://www.scotthasbrouck.com/blog/2016/3/18/passportjs-express-session-with-sockeio
+        var userId = socket.request.session.passport.user;
 
-        // Gennemgå hvert rum ->
-		rooms.every(function(room){
-			var pass = true, cunt = 0, target = 0;
+        find(function(err, rooms){
+            if(err) { return callback(err); }
 
-			// ForEach loop på rummet
-			// Tjek om brugeren har forbindelse - samme funktion, som ved login
-			room.connections.forEach(function(conn, i){
-				if(conn.userId === userId){
-					cunt++;
-				}
-				if(conn.socketId === socket.id){
-					pass = false, target = i;
-				}
-			});
+            // Gennemgå hvert rum ->
+            rooms.every(function(room){
+                var pass = true, cunt = 0, target = 0;
 
-			// !pass - smid brugeren ud.
-			if(!pass) {
-				room.connections.id(room.connections[target]._id).remove();
-				room.save(function(err){
-					callback(err, room, userId, cunt);
-				});
-			}
+                // ForEach loop på rummet
+                // Tjek om brugeren har forbindelse - samme funktion, som ved login
+                room.connections.forEach(function(conn, i){
+                    if(conn.userId === userId){
+                        cunt++;
+                    }
+                    if(conn.socketId === socket.id){
+                        pass = false, target = i;
+                    }
+                });
 
-			return pass;
-		});
-	});
-};
+                // !pass - smid brugeren ud.
+                if(!pass) {
+                    room.connections.id(room.connections[target]._id).remove();
+                    room.save(function(err){
+                        callback(err, room, userId, cunt);
+                    });
+                }
 
-// Export modules
-module.exports = { 
-	create, 
-	find, 
-	findOne, 
-	findById, 
-	addUser, 
-	getUsers, 
-	removeUser 
-};
+                return pass;
+            });
+        });
+    };
+
+    // Export modules
+    module.exports = { 
+        create, 
+        find, 
+        findOne, 
+        findById, 
+        addUser, 
+        getUsers, 
+        removeUser 
+    };
 }());
