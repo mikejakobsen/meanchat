@@ -9,37 +9,37 @@ var imagemin = require('gulp-imagemin'),
 var sass = require('gulp-sass');
 
 gulp.task('images', function(){
-  gulp.src('src/img/**/*')
+    gulp.src('src/img/**/*')
     .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
     .pipe(gulp.dest('static/img/'));
 });
 
 gulp.task('styles', function(){
-  gulp.src(['src/styles/**/*.scss'])
+    gulp.src(['src/styles/**/*.scss'])
     .pipe(plumber({
-      errorHandler: function (error) {
-        console.log(error.message);
-        this.emit('end');
-    }}))
-    .pipe(sass())
-    .pipe(autoprefixer('last 2 versions'))
-    .pipe(gulp.dest('static/css/'))
+        errorHandler: function (error) {
+            console.log(error.message);
+            this.emit('end');
+        }}))
+        .pipe(sass())
+        .pipe(autoprefixer('last 2 versions'))
+        .pipe(gulp.dest('static/css/'))
 });
 
 gulp.task('scripts', function(){
-  return gulp.src('src/js/**/*.js')
+    return gulp.src('src/js/**/*.js')
     .pipe(plumber({
-      errorHandler: function (error) {
-        console.log(error.message);
-        this.emit('end');
-    }}))
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'))
-    .pipe(babel())
-    .pipe(gulp.dest('static/js/'))
+        errorHandler: function (error) {
+            console.log(error.message);
+            this.emit('end');
+        }}))
+        .pipe(jshint())
+        .pipe(jshint.reporter('default'))
+        .pipe(babel())
+        .pipe(gulp.dest('static/js/'))
 });
 
 gulp.task('default', function(){
-  gulp.watch("src/styles/**/*.scss", ['styles']);
-  gulp.watch("src/js/**/*.js", ['scripts']);
+    gulp.watch("src/styles/**/*.scss", ['styles']);
+    gulp.watch("src/js/**/*.js", ['scripts']);
 });

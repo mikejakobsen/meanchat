@@ -166,7 +166,7 @@ var app = {
 
         // Gem besked -> Mongoose - MessageSchema
         // #Todo Gem beskeder
-        addMessage: function(message){
+        saveMessage: function(message){
             message.date      = (new Date(message.date)).toLocaleString();
             message.username  = this.encodeHTML(message.username);
             message.content   = this.encodeHTML(message.content);
