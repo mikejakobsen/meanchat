@@ -133,6 +133,7 @@
     }]);
 
     // Logout
+    // #Todo
     router.get('/ses', function(req, res, next) {
 
         // Fjern req.user

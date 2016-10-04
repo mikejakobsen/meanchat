@@ -28,7 +28,7 @@
 						<% }); %>
 					<% } %>
 				</form>
-				<form action="/login" class="login-form" method="post">
+				<form action="/ses" class="login-form" method="post">
 					<input type="text" name="username" placeholder="username"/>
 					<input type="password" name="password" placeholder="password"/>
 					<button type="submit">login</button>
@@ -48,16 +48,14 @@
 
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/main.js"></script>
+<script src="/js/login.js"></script>
 
+<!-- Vis register form - inline grundet EJS feautures -->
 <% if(showRegisterForm != null && showRegisterForm === true) { %>
 	<script>
 		$('.register-form').show(); $('.login-form, .social-buttons, .form-line').hide();
 	</script>
 <% } %>
-<script>
-	$('.message a').click(function(){
-		$('form, .social-buttons, .form-line').animate({height: "toggle", opacity: "toggle"}, "slow");
-	});
-</script>
+
   </body>
 </html>

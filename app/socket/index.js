@@ -4,8 +4,10 @@
     var config 	= require('../config');
     var redis 	= require('redis').createClient;
     var adapter = require('socket.io-redis');
+    var Mongoose = require('mongoose');
 
     var Room = require('../models/room');
+    var messageModel = require('../database').models.message;
 
     /**
      * Socket Events
@@ -106,9 +108,28 @@
                 // As the new message will be added manually in 'main.js' file
                 // socket.emit('addMessage', message);
 
+                var msg = ({
+                    content: message.content,
+                    username: message.username,
+                    date: message.date,
+                    roomId: roomId
+                });
+
+                console.log(msg);
+                /*
+                   var newMsg = function (msg) {
+                   messageModel.findOneAndUpdate(
+                   {content: content},
+                   {username: username},
+                   {date: date},
+                   {upsert: true},
+                   function (err, doc)
+
+                   ));
+                   */
+                // Print beskeden via Socket
                 socket.broadcast.to(roomId).emit('addMessage', message);
-                // #Todo - Save message
-                console.log(message);
+
             });
 
         });
