@@ -7,7 +7,7 @@
     var Mongoose = require('mongoose');
 
     var Room = require('../models/room');
-    var messageModel = require('../database').models.message;
+    var messageModel = require('../database').models.messages;
 
     /**
      * Socket Events
@@ -108,14 +108,30 @@
                 // As the new message will be added manually in 'main.js' file
                 // socket.emit('addMessage', message);
 
-                var msg = ({
+                var msg = new messageModel ({
                     content: message.content,
                     username: message.username,
                     date: message.date,
                     roomId: roomId
                 });
 
+                var saveMessage = function (msg, callback){
+                    // #Todo - Constructor skal starte med stort #roomModel
+                    var newMessage = new messageModel(msg);
+                    newMessage.save(callback);
+                };
+
+
+                msg.save(function (err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        console.log('Besked Gemt');
+                    }
+                });
+
                 console.log(msg);
+
                 /*
                    var newMsg = function (msg) {
                    messageModel.findOneAndUpdate(

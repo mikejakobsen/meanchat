@@ -14,7 +14,7 @@
         username: { type: String, required: true}
     });
 
-    var messageModel = Mongoose.model('message', MessageSchema);
+    var messageModel = Mongoose.model('message', MessageSchema, 'rooms.roomId');
 
     // Eksporter Schemaet
     module.exports = messageModel;
