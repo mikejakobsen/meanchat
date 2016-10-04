@@ -7,7 +7,9 @@
     var Mongoose = require('mongoose');
 
     var Room = require('../models/room');
-    var messageModel = require('../database').models.messages;
+    var roomModel = require('../database/schemas/room.js');
+    var messageModel = require('../database/schemas/message.js');
+
 
     /**
      * Socket Events
@@ -111,40 +113,34 @@
                 var msg = new messageModel ({
                     content: message.content,
                     username: message.username,
-                    date: message.date,
-                    roomId: roomId
+                    date: message.date
                 });
 
-                var saveMessage = function (msg, callback){
-                    // #Todo - Constructor skal starte med stort #roomModel
-                    var newMessage = new messageModel(msg);
-                    newMessage.save(callback);
-                };
+
+                roomModel.findOneAndUpdate({_id: roomId},
+                                  { $push: {messages: msg}},
+                                  function (err, room) {
+                                      console.log(msg);
+                                      if (err) {
+                                          console.log(err);
+                                      }
+                                      console.log(room);
+                                  });
 
 
-                msg.save(function (err) {
-                    if (err) {
-                        console.log(err);
-                    } else {
-                        console.log('Besked Gemt');
-                    }
-                });
+                           /*
+                              var newMsg = function (msg) {
+                              messageModel.findOneAndUpdate(
+                              {content: content},
+                              {username: username},
+                              {date: date},
+                              {upsert: true},
+                              function (err, doc)
 
-                console.log(msg);
-
-                /*
-                   var newMsg = function (msg) {
-                   messageModel.findOneAndUpdate(
-                   {content: content},
-                   {username: username},
-                   {date: date},
-                   {upsert: true},
-                   function (err, doc)
-
-                   ));
-                   */
-                // Print beskeden via Socket
-                socket.broadcast.to(roomId).emit('addMessage', message);
+                              ));
+                              */
+                           // Print beskeden via Socket
+                           socket.broadcast.to(roomId).emit('addMessage', message);
 
             });
 

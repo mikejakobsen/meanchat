@@ -8,14 +8,18 @@
      *
      */
 
-    var MessageSchema = new Mongoose.Schema({
+    var MessageSchema = Mongoose.Schema({
         content: { type: String, required: true},
         date: { type: Date, default: Date.now },
         username: { type: String, required: true}
     });
 
-    var messageModel = Mongoose.model('message', MessageSchema, 'rooms.roomId');
+
+    module.exports = Mongoose.model('message', MessageSchema);
+
 
     // Eksporter Schemaet
-    module.exports = messageModel;
+    //module.exports = messageModel;
+    //module.exports = MessageSchema;
+    //module.exports = { MessageSchema: MessageSchema, messageModel: messageModel }
 }());
