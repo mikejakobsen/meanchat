@@ -9,6 +9,7 @@
     var express	 	= require('express');
     var router 		= express.Router();
     var passport 	= require('passport');
+    var moment      = require('moment');
 
     var User = require('../models/user');
     var Room = require('../models/room');
@@ -128,7 +129,7 @@
                 return next(); 
             }
 
-            res.render('chatroom', { user: req.user, room: room });
+            res.render('chatroom', { user: req.user, room: room, moment: moment });
             // #Todo add query for chat messages.
         });
 

@@ -1,56 +1,62 @@
 <% include head.ejs %>
 
-<div class="container clearfix">
-	<div class="chat">
-		<div class="chat-header clearfix">
-			<!-- Find billede i user -> picture -->
-			<img src="<%= user.picture %>" alt="profil-picture">
-			<div class="chat-about">
-				<div class="chat-room"><%= room.title %></div>
-				<div class="chat-num-users"> Users</div>
+<div class="container">
+	<div class="row">
+		<div class="chat col-xs-8">
+			<div class="chat-header clearfix">
+				<!-- Find billede i user -> picture -->
+				<img src="<%= user.picture %>" alt="profil-picture">
+				<div class="chat-about">
+					<div class="chat-room"><%= room.title %></div>
+					<div class="chat-num-users"> Users</div>
+				</div>
+			</div> <!-- end chat-header -->
+
+			<div class="chat-history">
+				<ul>
+					<li>
+						<% room.messages.forEach(function(message, user) { %>
+							<% if(message.username != user.username) { %>
+								<div class="message-data-away">
+									<span class="message-data-name-away"><%= message.username %></span>
+									<span class="message-data-time-away"><%= moment(message.date).fromNow() %></span>
+								</div>
+								<div class="message-away my-message-away" dir="auto"><%= message.content %></div>
+							<% } else { %>
+								<div class="message-data clearfix">
+									<img src="<%= user.picture %>" alt="profil-picture">
+									<span class="message-data-name"><%= message.username %></span>
+									<span class="message-data-time"><%= moment(message.date).fromNow() %></span>
+								</div>
+								<div class="message my-message" dir="auto"><%= message.content %></div>
+							<% } %>
+						<% }); %>
+					</li>
+				</ul>
+			</div> <!-- end chat-history -->
+
+			<div class="chat-message clearfix">
+				<textarea name="message" placeholder ="Type your message" rows="3"></textarea>
+				<button type="submit">Send</button>
+			</div> <!-- end chat-message -->
+		</div> <!-- end chat -->
+
+		<div class="col-xs-4">
+			<div class="controls">
+				<a href="/ses" class="logout-btn">Logout</a>
+				<a href="/rooms" class="rooms-btn">Rooms</a>
 			</div>
-		</div> <!-- end chat-header -->
 
-		<div class="chat-history">
-			<ul>
-				<li>
-					<% room.messages.forEach(function(message) { %>
-						<% if(message.username != user.username) { %>
-							<div class="message-data-away">
-								<span class="message-data-name-away"><%= message.username %></span>
-								<span class="message-data-time-away"><%= message.date %></span>
-							</div>
-							<div class="message-away my-message-away" dir="auto"><%= message.content %></div>
-						<% } else { %>
-							<div class="message-data">
-								<span class="message-data-name"><%= message.username %></span>
-								<span class="message-data-time"><%= message.date %></span>
-							</div>
-							<div class="message my-message" dir="auto"><%= message.content %></div>
-						<% } %>
-					<% }); %>
-				</li>
-			</ul>
-		</div> <!-- end chat-history -->
-
-		<div class="chat-message clearfix">
-			<textarea name="message" placeholder ="Type your message" rows="3"></textarea>
-			<button type="submit">Send</button>
-		</div> <!-- end chat-message -->
-	</div> <!-- end chat -->
-
-	<div class="controls">
-		<a href="/ses" class="logout-btn">Logout</a>
-		<a href="/rooms" class="rooms-btn">Rooms</a>
-	</div>
-
-	<div class="users-list">
-		<ul class="list">
-		</ul>
+			<div class="users-list">
+				<ul class="list">
+				</ul>
+			</div>
+		</div>
 	</div>
 </div> <!-- end container -->
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/main.js"></script>
+
 
 <script>$(function(){app.chat('<%= room.id %>', '<%= user.username %>')});</script>
   </body>

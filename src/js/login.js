@@ -2,6 +2,6 @@
     'use strict';
 
     $('.message a').click(function(){
-        $('form, .social-buttons, .form-line').animate({height: "toggle", opacity: "toggle"}, "slow");
+        $('form, .social-signin, .form-line').animate({height: "toggle", opacity: "toggle"}, "slow");
     });
 }());

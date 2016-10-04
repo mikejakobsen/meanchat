@@ -1,1 +1,1 @@
-"use strict";!function(){$(".message a").click(function(){$("form, .social-buttons, .form-line").animate({height:"toggle",opacity:"toggle"},"slow")})}();
+"use strict";!function(){$(".message a").click(function(){$("form, .social-signin, .form-line").animate({height:"toggle",opacity:"toggle"},"slow")})}();

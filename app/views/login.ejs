@@ -30,16 +30,11 @@
 					<% } if (success != null && showRegisterForm == null) { %>
 						<p class="message success"><%= success %></p>
 					<% } %>
-					<div class="form-line"></div>
-					<div class="social-buttons">
-						<div><span>Login</span> via</div>
-						<a href="/auth/facebook">
-							Facebook
-						</a>
-
-						<a href="/auth/twitter">
-							Twitter
-						</a>
+					<div class="social-signin">
+						<span>Login via</span>
+						<div class="form-line"></div>
+						<a href="/auth/facebook"><button class="fb"><i class="fa fa-facebook" aria-hidden="true"></i></button></a>
+						<a href="/auth/twitter"><button  class="tw"><i class="fa fa-twitter" aria-hidden="true"></i></button></a>
 					</div>
 				</form>
 			</div>
@@ -54,7 +49,7 @@
 <!-- Vis register form - inline grundet EJS feautures -->
 <% if(showRegisterForm != null && showRegisterForm === true) { %>
 	<script>
-		$('.register-form').show(); $('.login-form, .social-buttons, .form-line').hide();
+		$('.register-form').show(); $('.login-form, .social-signin, .form-line').hide();
 	</script>
 <% } %>
 

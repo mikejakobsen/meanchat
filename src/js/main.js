@@ -69,6 +69,7 @@ var app = {
                         content: textareaEle.val(), 
                         username: username,
                         date: Date.now()
+                        console.log(users);
                     };
 
                     socket.emit('newMessage', roomId, message);
@@ -148,7 +149,8 @@ var app = {
             message.username  = this.encodeHTML(message.username);
             message.content   = this.encodeHTML(message.content);
 
-            //#Todo tilføj away
+            //#Todo tilføj away user
+            // Lige nu er den jo altid true
             if (message.username != message.username) {
                 var html = `<li>
                 <div class="message-data-away">
