@@ -118,29 +118,15 @@
 
 
                 roomModel.findOneAndUpdate({_id: roomId},
-                                  { $push: {messages: msg}},
-                                  function (err, room) {
-                                      console.log(msg);
-                                      if (err) {
-                                          console.log(err);
-                                      }
-                                      console.log(room);
-                                  });
-
-
-                           /*
-                              var newMsg = function (msg) {
-                              messageModel.findOneAndUpdate(
-                              {content: content},
-                              {username: username},
-                              {date: date},
-                              {upsert: true},
-                              function (err, doc)
-
-                              ));
-                              */
-                           // Print beskeden via Socket
-                           socket.broadcast.to(roomId).emit('addMessage', message);
+                                           { $push: {messages: msg}},
+                                           function (err, room) {
+                                               // Console log den modtagne besked
+                                               console.log(msg);
+                                               if (err) {
+                                                   console.log(err);
+                                               }
+                                           });
+                                           socket.broadcast.to(roomId).emit('addMessage', message);
 
             });
 

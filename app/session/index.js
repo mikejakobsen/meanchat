@@ -23,7 +23,6 @@
                 secret: config.sessionSecret,
                 resave: false,
                 saveUninitialized: false,
-                // sess.cookie.secure = true // serve secure cookies
                 unset: 'destroy',
                 // Read: https://github.com/jdesboeufs/connect-mongo
                 store: new MongoStore({ mongooseConnection: Mongo.Mongoose.connection })
