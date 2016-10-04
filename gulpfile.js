@@ -78,7 +78,7 @@
         browserSync.init(null, {
             proxy: "http://localhost:3000",
             files: ["public/**/*.*"],
-            browser: "google chrome",
+            browser: "google chrome canary",
             port: 7000,
         });
     });

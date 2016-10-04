@@ -15,11 +15,19 @@
 			<ul>
 				<li>
 					<% room.messages.forEach(function(message) { %>
-						<div class="message-data">
-							<span class="message-data-name"><%= message.username %></span>
-							<span class="message-data-time"><%= message.date %></span>
-						</div>
-						<div class="message my-message" dir="auto"><%= message.content %></div>
+						<% if(message.username != user.username) { %>
+							<div class="message-data-away">
+								<span class="message-data-name-away"><%= message.username %></span>
+								<span class="message-data-time-away"><%= message.date %></span>
+							</div>
+							<div class="message-away my-message-away" dir="auto"><%= message.content %></div>
+						<% } else { %>
+							<div class="message-data">
+								<span class="message-data-name"><%= message.username %></span>
+								<span class="message-data-time"><%= message.date %></span>
+							</div>
+							<div class="message my-message" dir="auto"><%= message.content %></div>
+						<% } %>
 					<% }); %>
 				</li>
 			</ul>

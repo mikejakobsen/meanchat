@@ -27,6 +27,7 @@
 
     var roomModel = Mongoose.model('room', RoomSchema);
 
+
     // Gør den generelt tilgængelig
     module.exports = roomModel;
 }());

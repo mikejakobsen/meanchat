@@ -2,19 +2,9 @@
 
 <div class="container">
 	<div class="row">
-		<div class="form col-xs-6">
-			<div class="social-buttons">
-				<div><span>Login</span> via</div>
-				<a href="/auth/facebook">
-					Facebook
-				</a>
+		<div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 form">
+			<h1>MeanChat</h1>
 
-				<a href="/auth/twitter">
-					Twitter
-				</a>
-			</div>
-
-			<div class="form-line"></div>
 
 			<div>
 				<form action="/register" class="register-form" method="post" >
@@ -40,6 +30,17 @@
 					<% } if (success != null && showRegisterForm == null) { %>
 						<p class="message success"><%= success %></p>
 					<% } %>
+					<div class="form-line"></div>
+					<div class="social-buttons">
+						<div><span>Login</span> via</div>
+						<a href="/auth/facebook">
+							Facebook
+						</a>
+
+						<a href="/auth/twitter">
+							Twitter
+						</a>
+					</div>
 				</form>
 			</div>
 		</div> <!-- end form -->
@@ -57,5 +58,5 @@
 	</script>
 <% } %>
 
-  </body>
-</html>
+				</body>
+			</html>

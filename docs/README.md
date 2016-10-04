@@ -3,4 +3,12 @@
 
 # Project Mean Stack Chat
 
-##
+## Mean Stack
+
+## Encryption
+
+## Social Login
+
+## Mongoose
+
+

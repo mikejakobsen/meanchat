@@ -1,11 +1,11 @@
 'use strict';
 
 // Hent depencies
-var express 	= require('express');
-var app  		= express();
-var path 		= require('path');
-var bodyParser 	= require('body-parser');
-var flash 		= require('connect-flash');
+var express 	     = require('express');
+var app  		    = express();
+var path 		    = require('path');
+var bodyParser 	    = require('body-parser');
+var flash 		    = require('connect-flash');
 
 // Componenter - alle de forskellige filer, linkes nærmest her
 var routes 		= require('./app/routes');

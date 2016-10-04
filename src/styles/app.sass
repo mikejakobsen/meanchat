@@ -8,13 +8,12 @@
     box-sizing: border-box
 
 body
-  background: #C5DDEB
   font-family: $font-stack
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
 .container
-  background: $dark-blue
+  background-color: $dark-blue
 
 .users-list
   float: left
@@ -47,7 +46,7 @@ body
 
 .status .online
   color: $green
-  font-size: 12px
+  font-size: 14px
 
 .chat, .room
   float: left
@@ -116,6 +115,37 @@ body
   .chat-message
     padding: 20px
 
+.chat
+  .chat-history
+    .message-data-away
+      margin-bottom: 15px
+    .message-data-time-away
+      color: $dark-blue
+      padding-left: 6px
+      font-size: 80%
+    .message-away
+      color: white
+      padding: 18px 20px
+      line-height: 26px
+      font-size: 16px
+      margin-bottom: 30px
+      position: relative
+      &:after
+        bottom: 100%
+        right: 7%
+        border: solid transparent
+        content: " "
+        height: 0
+        width: 0
+        position: absolute
+        pointer-events: none
+        border-bottom-color: $dark-blue
+        border-width: 10px
+        margin-left: -10px
+    .my-message-away
+      background: $dark-blue
+  .chat-message
+    padding: 20px
 .room .room-create
   padding: 20px
 
@@ -167,9 +197,8 @@ body
   position: relative
   z-index: 1
   background: #FFFFFF
-  max-width: 400px
-  margin: 0 auto 100px
   padding: 45px
+  margin: 100px auto
   text-align: center
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24)
   input
@@ -256,11 +285,12 @@ ul
 .form-line
   position: absolute
   left: 0px
-  width: 360px
   margin-top: 2px
   border-bottom: 2px solid white
 
-.social-buttons div span
+.social-buttons
+  padding: 10px
+  .social-buttons div span
   font-weight: bold
 
 .chat-message button, .room-create button
