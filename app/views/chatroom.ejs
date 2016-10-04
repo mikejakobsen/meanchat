@@ -13,6 +13,15 @@
 
 		<div class="chat-history">
 			<ul>
+				<li>
+					<% room.messages.forEach(function(message) { %>
+						<div class="message-data">
+							<span class="message-data-name"><%= message.username %></span>
+							<span class="message-data-time"><%= message.date %></span>
+						</div>
+						<div class="message my-message" dir="auto"><%= message.content %></div>
+					<% }); %>
+				</li>
 			</ul>
 		</div> <!-- end chat-history -->
 

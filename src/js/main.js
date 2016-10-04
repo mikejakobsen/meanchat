@@ -145,11 +145,8 @@ var app = {
         // Adding a new message to chat history
         addMessage: function(message){
             message.date      = (new Date(message.date)).toLocaleString();
-            console.log(message.date);
             message.username  = this.encodeHTML(message.username);
-            console.log(message.username);
             message.content   = this.encodeHTML(message.content);
-            console.log(message.content);
 
             var html = `<li>
             <div class="message-data">
@@ -170,7 +167,6 @@ var app = {
             message.date      = (new Date(message.date)).toLocaleString();
             message.username  = this.encodeHTML(message.username);
             message.content   = this.encodeHTML(message.content);
-            console.log(message.date, message.username, message.content);
         },
 
         // Update number of rooms

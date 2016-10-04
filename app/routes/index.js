@@ -127,7 +127,10 @@
             if(!room){
                 return next(); 
             }
+            console.log(room.messages);
+
             res.render('chatroom', { user: req.user, room: room });
+            // #Todo add query for chat messages.
         });
 
     }]);

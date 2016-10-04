@@ -50,7 +50,7 @@
     });
 
     // Tjek App for fejl
-    gulp.task('javascript', function(){
+    gulp.task('hint', function(){
         return gulp.src('app/**/*.js')
         .pipe(plumber({
             errorHandler: function (error) {
@@ -78,7 +78,7 @@
         browserSync.init(null, {
             proxy: "http://localhost:3000",
             files: ["public/**/*.*"],
-            browser: "google chrome canary",
+            browser: "google chrome",
             port: 7000,
         });
     });
