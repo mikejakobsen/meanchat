@@ -5,6 +5,8 @@
 
 ## Indledning
 
+Excersise description http://www.mikejakobsen.com/stuff/mandatory-1.pdf
+
 
 
 ## Mean Stack
