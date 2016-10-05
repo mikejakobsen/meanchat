@@ -1,9 +1,16 @@
 
 ![alt tag](http://www.mikejakobsen.com/mike.png)
 
-# Project Mean Stack Chat
+# Project Nearly Mean Stack Chat
 
-## Indledning
+## To do
+
+```
+- [x] npm install && bower install
+- [ ] Production: Gulp watch
+- [ ] For viewing pleasue only: nodemon
+- [ ] http://localhost:3000
+```
 
 Excersise description http://www.mikejakobsen.com/stuff/mandatory-1.pdf
 
