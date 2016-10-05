@@ -54,7 +54,7 @@ Excersise description http://www.mikejakobsen.com/stuff/mandatory-1.pdf
 	* [rooms.js](./src/js/rooms.js)
 * [styles](./src/styles)
 * [app.sass](./src/styles/app.sass)
-* _[variables.sass](./src/styles/variables.sass)
+* [variables.sass](./src/styles/variables.sass)
 * [static](./static)
 * [css](./static/css)
 	* [app.css](./static/css/app.css)
@@ -112,8 +112,82 @@ UserSchema.methods.validatePassword = function(password, callback) {
 ```
 ## Social Login
 
-passport https://github.com/jaredhanson/passport-facebook
-passport socket.io https://github.com/jfromaniello/passport.socketio
+Dependencies:
+
+* [Passport](https://github.com/jaredhanson/passport-facebook)
+* [Passport Local](https://github.com/jfromaniello/passport.socketio)
+* [Passport Twitter](https://github.com/jfromaniello/passport.socketio)
+* [Passport Facebook](https://github.com/jfromaniello/passport.socketio)
+
+
+Når brugeren indledningsvis tilgår applikationen, og dermed `/` tilgår han ligeledes nedenstående conditional statement.
+
+Der i tilfældet at den besøgende har en instance af [IsAuthenticated](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/models/user.js#L55) bliver ledt videre til `/Rooms`. Ellers tilgår brugeren `/login` med tilhørende [Connect-Flash](https://github.com/jaredhanson/connect-flash) statusmeddelelse. Der enten viser en viser eventuelle fejlmeddelelser, eller leder den besøgende videre til `showRegisterForm`.
+
+```javascript
+// Index route
+router.get('/', function(req, res, next) {
+	// If isAuthenticated redirect
+	// til rum oversigten
+	// /rooms
+	if(req.isAuthenticated()){
+		res.redirect('/rooms');
+	}
+	else{
+		// Render login siden
+		// req.flash
+		res.render('login', {
+			success: req.flash('success')[0],
+			errors: req.flash('error'), 
+			showRegisterForm: req.flash('showRegisterForm')[0]
+		});
+	}
+});
+```
+## Oprettelse af brugeren
+
+I tilfælde af at brugeren ønsker at oprette sig via `credentials`. Poster han indledningsvis to variabler der tilgåes i `request bodyen`, og gemmes i credentials variablen.
+Denne variable tjekkes dernæst for indhold, i tilfældet at variablen er tom, og brugeren dermed intet har skrevet. Tilgåer brugeren en fejlmeddelelse via [Connect-flash](https://github.com/mikejakobsen/meanchat/blob/a48ee2fcccf62e3fe307ae5e241b9ff7c8b6c834/server.js#8) middlewaren. Hvis conditional statementen derimod evalueres til false, tjekkes brugerens indtastninger op imod databasens [Users collection](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/database/schemas/user.js#24).
+
+
+```javascript
+// Create user
+router.post('/register', function(req, res, next) {
+
+	// Post variablerne req.body.username og req.body.password
+	// req.body - requst body
+	var credentials = {'username': req.body.username, 'password': req.body.password };
+
+	// If username === '' ingenting samt password
+	// Flash error
+	// Hent showRegisterForm
+	if(credentials.username === '' || credentials.password === ''){
+		req.flash('error', 'Write something, dammit..');
+		req.flash('showRegisterForm', true);
+		res.redirect('/');
+	}else{
+
+		// Tjek om brugeren findes
+		User.findOne({'username': new RegExp('^' + req.body.username + '$', 'i'), 'socialId': null}, function(err, user){
+			if(err) throw err;
+			if(user){
+				req.flash('error', 'Du findes allerede');
+				req.flash('showRegisterForm', true);
+				res.redirect('/');
+			}else{
+				User.create(credentials, function(err, newUser){
+					if(err) throw err;
+					req.flash('success', "Yea' du er oprettet");
+					res.redirect('/');
+				});
+			}
+		});
+	}
+});
+```
+
+[user.js](./app/models/user.js)
+
 
 ```javascript
 var UserSchema = new Mongoose.Schema({
