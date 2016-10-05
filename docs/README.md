@@ -69,6 +69,12 @@ var UserSchema = new Mongoose.Schema({
 
 ## Time since function
 
+Moment.js http://momentjs.com/docs/
+
+```javascript
+<<%= moment(message.date).fromNow() %>
+```
+
 ## Mongoose
 
 

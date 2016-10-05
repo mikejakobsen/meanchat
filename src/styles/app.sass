@@ -12,10 +12,14 @@ body
   background: radial-gradient(ellipse farthest-corner at center top, #d8dbe2 0%, #a9bcd0 100%)
   height: 100vh
   background: url("") no-repeat center center fixed
+  background: $white
 
 .container
   margin: 20px 0
   border-radius: 10px
+
+.sidebar
+  height: 100%
 
 .users-list
   float: left
@@ -57,11 +61,11 @@ body
     margin-top: 8px
     padding-left: 8px
   .status
-    color: $grey
+    color: $green
 
 // Social login buttons
-.social-signin
-  & button
+.social-buttons
+  & div
     border: none
     border-radius: 5px
     cursor: pointer
@@ -86,6 +90,7 @@ body
 .chat, .room
   background: $white
   color: $dark-blue
+  width: 80%
 
 .chat .chat-header, .room .room-header
   padding: 20px
@@ -157,13 +162,20 @@ body
 
 .chat
   .chat-history
+    img.profile-picture
+      border-radius: 50%
+      max-width: 40px
+      max-height: 40px
+      float: right
     .message-data-away
       margin-bottom: 15px
     .message-data-time-away
       color: $dark-blue
       padding-left: 6px
       font-size: 80%
+      float: left
     .message-data-name-away
+      float: right
     .message-away
       color: white
       padding: 18px 20px
@@ -383,6 +395,20 @@ ul
   text-align: center
   border-bottom: 2px solid white
 
+.room-controls
+  a
+    float: right
+    text-transform: uppercase
+    background: $green
+    border: 0
+    padding: 15px
+    color: #FFFFFF
+    font-size: 14px
+    cursor: pointer
+    width: 10%
+    float: right
+  text-align: center
+  border-bottom: 2px solid white
 .logout
   text-transform: uppercase
   background: $green
@@ -395,8 +421,8 @@ ul
   border-bottom: 2px solid white
 
 .users-list li img, .chat-header img
-  width: 60px
-  height: 60px
+  max-width: 50px
+  max-height: 50px
   border: 3px solid #676c75
   border-radius: 50%
   -webkit-border-radius: 50%

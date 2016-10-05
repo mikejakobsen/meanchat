@@ -42,7 +42,7 @@ var app = {
     chat: function(roomId, username){
 
         var socket = io('/chatroom', { transports: ['websocket'] });
-        
+
         // Få forbindelse til Chat rummet
         socket.on('connect', function () {
             // Joiner rummer 
@@ -69,7 +69,6 @@ var app = {
                         content: textareaEle.val(), 
                         username: username,
                         date: Date.now()
-                        console.log(users);
                     };
 
                     socket.emit('newMessage', roomId, message);
@@ -78,7 +77,7 @@ var app = {
                     console.log(message);
                 }
             });
-            
+
             // Fjern brugeren fra oversigten når den forlader rummer
             // Når removeUser - fjern  userid fra li#user
             socket.on('removeUser', function(userId) {
@@ -124,11 +123,11 @@ var app = {
             var html = '';
             for(var user of users) {
                 user.username = this.encodeHTML(user.username);
-                html += `<li class="clearfix" id="user-${user._id}">
-                <img src="${user.picture}" alt="${user.username}" />
+                html += `<li class="user clearfix" id="user-${user._id}">
+                <img src="${user.picture}" class="profile-pic" alt="${user.username}" />
                 <div class="about">
                 <div class="name">${user.username}</div>
-                <div class="status"><i class="fa fa-circle online"> Online</i></div>
+                <div class="status"><i class="fa fa-circle online"></i> Online</div>
                 </div></li>`;
             }
 
@@ -144,20 +143,20 @@ var app = {
         },
 
         // Adding a new message to chat history
-        addMessage: function(message){
+        addMessage: function(message, users){
             message.date      = (new Date(message.date)).toLocaleString();
             message.username  = this.encodeHTML(message.username);
             message.content   = this.encodeHTML(message.content);
 
-            //#Todo tilføj away user
-            // Lige nu er den jo altid true
             if (message.username != message.username) {
-                var html = `<li>
-                <div class="message-data-away">
-                <span class="message-data-name-away">${message.username}</span>
-                <span class="message-data-time-away">${message.date}</span>
+                var html = `<li class="clearfix">
+                <div class="message-data align-right">
+                <span class="message-data-time" >${message.date}</span> &nbsp; &nbsp;
+                <span class="message-data-name" >${message.username}</span>
                 </div>
-                <div class="message-away my-message-away" dir="auto">${message.content}</div>
+                <div class="message other-message float-right">
+                ${message.content}
+                </div>
                 </li>`;
             } else {
                 var html = `<li>
@@ -165,14 +164,23 @@ var app = {
                 <span class="message-data-name">${message.username}</span>
                 <span class="message-data-time">${message.date}</span>
                 </div>
-                <div class="message my-message" dir="auto">${message.content}</div>
+                <div class="message my-message">
+                ${message.content}
+                </div>
                 </li>`;
             }
-
             $(html).hide().appendTo('.chat-history ul').slideDown(200);
 
             // Keep scroll bar down
             $(".chat-history").animate({ scrollTop: $('.chat-history')[0].scrollHeight}, 1000);
+        },
+
+        // Gem besked -> Mongoose - MessageSchema
+        // #Todo Gem beskeder
+        saveMessage: function(message){
+            message.date      = (new Date(message.date)).toLocaleString();
+            message.username  = this.encodeHTML(message.username);
+            message.content   = this.encodeHTML(message.content);
         },
 
         // Update number of rooms
