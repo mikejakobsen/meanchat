@@ -204,7 +204,7 @@ var UserSchema = new Mongoose.Schema({
 ```
 Og gemmes dernæst i databasen, i henhold til userschemaet. Den angivne kode encrypteres [andetsteds](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/database/schemas/user.js#L55) via [bCryptjs](https://github.com/kelektiv/node.bcrypt.js) og Blowfish algoritmen.
 
-```Json
+```javascript
 {
     "_id" : ObjectId("57f5254ebdea2efa75055256"),
     "username" : "Sarah Frost",
@@ -219,7 +219,7 @@ Og gemmes dernæst i databasen, i henhold til userschemaet. Den angivne kode enc
 Moment.js http://momentjs.com/docs/
 
 ```javascript
-<<%= moment(message.date).fromNow() %>
+<%= moment(message.date).fromNow() %>
 ```
 
 ## Mongoose
