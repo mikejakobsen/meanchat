@@ -5,17 +5,11 @@ node_modules
 .idea/
 
 # Bower
-bower_modules
+bower_components
 
 # Logs
 debug.log
 npm-debug.log
-
-# Codekit
-
-config.codekit
-src/styles/.sass-cache/
-
 
 # Config
 
