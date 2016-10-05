@@ -216,13 +216,25 @@ Og gemmes dernæst i databasen, i henhold til userschemaet. Den angivne kode enc
 
 ## Time since function
 
-Moment.js http://momentjs.com/docs/
+For at konventere tidsangivelserne i chatten fra SI tidsangivelse, til relativ tidsangivelse benyttes [Moment.js](http://momentjs.com/docs/). Indledningsvis importeres Moment.js i [node-serveren](https://github.com/mikejakobsen/meanchat/blob/Date-fix/server.js#L10).
+
+```javascript
+var moment = require('moment');
+moment().format();
+```
+
+Moment.js laver en wrapper omkring `Date` object. For at tilgå denne wrapper kaldes `moment()` med en dato som parameter.
+For at ændre tidsangivelserne i beskederne, kaldes `moment(message.date)` derfor, samt [fromNow()](https://github.com/moment/momentjs.com/blob/b1e718bc2cff461db34214992c79ba4054fa5d33/docs/moment/04-displaying/02-fromnow.md). Som en del af en EJS template string, ser det således ud.
 
 ```javascript
 <%= moment(message.date).fromNow() %>
 ```
+[EjS og Moment.js](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/views/chatroom.ejs#L49)
+
 
 ## Mongoose
+
+Mongoose er en (ODM) `òbject data modeling`, der gør det muligt at fastsætte en datamodel, og dermed en struktur i den gemte data. 
 
 ### Dependencies
 
