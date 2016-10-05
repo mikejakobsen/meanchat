@@ -234,12 +234,55 @@ For at ændre tidsangivelserne i beskederne, kaldes `moment(message.date)` derfo
 
 ## Mongoose
 
-Mongoose er en (ODM) `òbject data modeling`, der gør det muligt at fastsætte en datamodel, og dermed en struktur i den gemte data. 
+Mongoose er en (ODM) `object data modeling`, der gør det muligt at fastsætte en [datamodel](https://github.com/mikejakobsen/meanchat/tree/Date-fix/app/database/schemas), og dermed en struktur i den gemte data. 
 
-### Dependencies
+Kontra en `ORM` som fx. [Laravel Elequent](https://laravel.com/docs/master/eloquent). Der `mapper` SQL-syntaxen så PHP kan interagere med SQL. Behøver en `ODM` som Mongoose ikke redefinere forholdet imellem database og applicationen, da `JSON` og `BSON` interager gnindningsfrit. 
 
 
-## Brugte moduler
+## EJS
+
+EJS benyttes som `template engine`. En template engine gør det muligt at benytte statiske filer som `html`, da template enginen tilføjer eventuel dynamisk indhold ved runtime, og sender disse til clienten. Express understøtter en række [template engines](https://github.com/expressjs/express/wiki#template-engines). For at bibeholde den grundlæggende `html` struktur benyttes [EJS](http://www.embeddedjs.com/getting_started.html), der som navnet antyder `Èmbedded JavaScript`, tillader fx at frekventere et `ForLoop`, der tillader applicationen  at iterere over de gemte beskeder for dernæst at printe de [sendte beskeder](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/views/chatroom.ejs#L45).
+
+```ejs
+<% room.messages.forEach(function(message) { %>
+	<div class="message-data">
+		<span class="message-data-name"><%= message.username %></span>
+		<span class="message-data-time"><%= message.date %></span>
+	</div>
+	<div class="message my-message" dir="auto"><%= message.content %></div>
+<% }); %>
+```
+
+I forhold til de `runtime` sendte beskeder fra [Socket.io](https://github.com/socketio/socket.io), printes disse via JavaScript. Da EJS ikke tillader at tilføje elementer til applications DOM [løbende](https://github.com/mikejakobsen/meanchat/blob/Date-fix/src/js/main.js#L146). Disse beskeder appendes dernæst til [.chat history ul](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/views/chatroom.ejs#L43). Med hjælp fra Jquery.
+
+```javascript
+addMessage: function(message, users){
+	message.date      = (new Date(message.date)).toLocaleString();
+	message.username  = this.encodeHTML(message.username);
+	message.content   = this.encodeHTML(message.content);
+
+
+	var html = `<li class="clearfix">
+		<div class="message-data align-right">
+		<span class="message-data-time" >${message.date}</span> &nbsp; &nbsp;
+	<span class="message-data-name" >${message.username}</span>
+		</div>
+		<div class="message other-message float-right">
+		${message.content}
+	</div>
+		</li>`;
+}
+
+$(html).hide().appendTo('.chat-history ul').slideDown(200);
+
+}
+```
+
+
+## Dependencies
+
+
+### Brugte moduler
 
 * [Bcrypt-nodejs](https://github.com/mikejakobsen/meanchat/tree/Date-fix)
 * [Body-parser](https://github.com/expressjs/body-parser)
