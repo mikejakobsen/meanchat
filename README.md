@@ -186,9 +186,7 @@ router.post('/register', function(req, res, next) {
 	}
 });
 ```
-
-[user.js](./app/models/user.js)
-
+Brugeren modeleres dernæst fra UserSchema [user.js](./app/database/schemas/user.js#L24).
 
 ```javascript
 var UserSchema = new Mongoose.Schema({
@@ -203,6 +201,17 @@ var UserSchema = new Mongoose.Schema({
 	if(!user.picture){
 		user.picture = DEFAULT_USER_PICTURE;
 	}
+```
+Og gemmes dernæst i databasen, i henhold til userschemaet. Den angivne kode encrypteres [andetsteds](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/database/schemas/user.js#L55) via [bCryptjs](https://github.com/kelektiv/node.bcrypt.js) og Blowfish algoritmen.
+
+```Json
+{
+    "_id" : ObjectId("57f5254ebdea2efa75055256"),
+    "username" : "Sarah Frost",
+    "picture" : "/img/user.jpg",
+    "socialId" : null,
+    "password" : "$2a$10$/JWVwNGlfozx8DauFwnnZeSvZXBmxGbOdM.gm7NK2rUfVZRBFqy12",
+}
 ```
 
 ## Time since function

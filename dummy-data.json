@@ -1,0 +1,49 @@
+{
+    "_id" : ObjectId("57f52538bdea2efa75055253"),
+    "username" : "Mike Jakobsen",
+    "picture" : "https://scontent.xx.fbcdn.net/v/t1.0-1/c13.0.50.50/p50x50/312809_2005127862915_182821112_n.jpg?oh=9571576a98c9983a914fed90faf837f1&oe=58AA3242",
+    "socialId" : "secret",
+    "password" : null,
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("57f5254ebdea2efa75055256"),
+    "username" : "Sarah Frost",
+    "picture" : "/img/user.jpg",
+    "socialId" : null,
+    "password" : "$2a$10$/JWVwNGlfozx8DauFwnnZeSvZXBmxGbOdM.gm7NK2rUfVZRBFqy12",
+    "__v" : 0
+}
+
+{
+    "_id" : ObjectId("57f52541bdea2efa75055254"),
+    "title" : "MeanJSChat",
+    "messages" : [ 
+        {
+            "content" : "Hej",
+            "username" : "Mike Jakobsen",
+            "_id" : ObjectId("57f52559bdea2efa75055258"),
+            "date" : ISODate("2016-10-05T16:07:53.747Z")
+        }, 
+        {
+            "content" : "Hej - velkommen til..\n",
+            "username" : "Sarah Frost",
+            "_id" : ObjectId("57f52562bdea2efa75055259"),
+            "date" : ISODate("2016-10-05T16:08:02.831Z")
+        }
+    ],
+    "connections" : [ 
+        {
+            "userId" : "57f52538bdea2efa75055253",
+            "socketId" : "/chatroom#Bt13VHkwOqZeX80nAABA",
+            "_id" : ObjectId("57f52545bdea2efa75055255")
+        }, 
+        {
+            "userId" : "57f5254ebdea2efa75055256",
+            "socketId" : "/chatroom#gmA6jGNdK_Bp_gjlAABC",
+            "_id" : ObjectId("57f52555bdea2efa75055257")
+        }
+    ],
+    "__v" : 2
+}
