@@ -9,6 +9,7 @@ Excersise description http://www.mikejakobsen.com/stuff/mandatory-1.pdf
 
 ## File Structure
 
+```
 .
 ├── README.md
 ├── app
@@ -70,7 +71,7 @@ Excersise description http://www.mikejakobsen.com/stuff/mandatory-1.pdf
 └── structure.md
 
 20 directories, 38 files
-
+```
 
 ## Mean Stack
 
