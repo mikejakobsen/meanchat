@@ -84,6 +84,10 @@ Excersise description http://www.mikejakobsen.com/stuff/mandatory-1.pdf
 
 ### Express
 
+[Express.js](http://expressjs.com) er et `Web application framework` baseret på Node.js.
+
+Express er et relativt minimalt, og gør derfor i stor grad brug af moduler. Som fx. de anvendte [Socket.io](https://github.com/socketio/socket.io) og [Mongoose](http://mongoosejs.com).
+
 Node.js funktionen `require()` der gør det muligt at importere moduler.
 
 Ikke i global namespace, modulet får derimod sit eget scope. De enkelte aspekter af modulet, som senere er benyttet, skal derfor eksporteres.
@@ -316,10 +320,11 @@ Gulp benyttes bland andet til at [kompilere](https://github.com/mikejakobsen/mea
 
 Indledningsvis defineres en `Gulp.task`, som i eksemplet herunder med `scripts`.
 Dernæst defineres input filerne `gulp.src('src/js/**/*.js')`. I dette tilfælder omfatter det alle JavaScript filerne, og dermed filerne med endelsen `.js` i src mappen. Stjernen/asterisk symbolet er her wildcards.
-Dernæst tilføjes de omfattede filer til `Gulps stream`, hver `.pipe` instancierer dernæst et modul der er importeret i [Gulpfilen](https://github.com/mikejakobsen/meanchat/blob/Date-fix/gulpfile.js€L). Som fx. `.pipe(uglify())` der minificerer den importerede kode. For dernæst at compilede, de importeredde filer til `pipe(gulp.dest('static/js/'))`. Og dermed `static/js/` mappen, der loades af applikationen.
+Dernæst tilføjes de omfattede filer til `Gulps stream`, hver `.pipe` instancierer dernæst et modul der er importeret i [Gulpfilen](https://github.com/mikejakobsen/meanchat/blob/Date-fix/gulpfile.js). Som fx. `.pipe(uglify())` der minificerer den importerede kode. 
+
+For dernæst at compilede, de importeredde filer til `pipe(gulp.dest('static/js/'))`. Og dermed `static/js/` mappen, der loades af applikationen.
 
 
-gulp stream to be processed
 
 ```javascript
     gulp.task('scripts', function(){
@@ -343,23 +348,20 @@ gulp stream to be processed
 
 ## Dependencies
 
-
-### Brugte moduler
-
-*[ Bcrypt-nodejs](httptps://github.com/mikejakobsen/meanchat/tree/Date-fix)
-*[ Body-parser](https://github.com/expressjs/body-parser)
-*[ Connect-flash](https://github.com/jaredhanson/connect-flash)
-*[ Connect-mongo](https://github.com/jdesboeufs/connect-mongo)
-*[ Ejs](https://github.com/mde/ejs)
-*[ Express](https://github.com/expressjs/express)
-*[ Express-session](https://github.com/expressjs/session)
-*[ Moment](http://momentjs.com/)
-*[ Mongoose](https://github.com/Automattic/mongoose)
-*[ Passport](https://github.com/jaredhanson/passport)
-*[ Passport-facebook](https://github.com/jaredhanson/passport-facebook)
-*[ Passport-local](https://github.com/jaredhanson/passport-local)
-*[ Passport-twitter](https://github.com/jaredhanson/passport-twitter)
-*[ Redis](https://github.com/antirez/redis)
-*[ Socket.io](https://github.com/socketio/socket.io)
-*[ Socket.io-redis](https://github.com/socketio/socket.io-redis)
-*[ Winston](https://github.com/winstonjs/winston)
+* [Bcrypt-nodejs](httptps://github.com/mikejakobsen/meanchat/tree/Date-fix)
+* [Body-parser](https://github.com/expressjs/body-parser)
+* [Connect-flash](https://github.com/jaredhanson/connect-flash)
+* [Connect-mongo](https://github.com/jdesboeufs/connect-mongo)
+* [Ejs](https://github.com/mde/ejs)
+* [Express](https://github.com/expressjs/express)
+* [Express-session](https://github.com/expressjs/session)
+* [Moment](http://momentjs.com/)
+* [Mongoose](https://github.com/Automattic/mongoose)
+* [Passport](https://github.com/jaredhanson/passport)
+* [Passport-facebook](https://github.com/jaredhanson/passport-facebook)
+* [Passport-local](https://github.com/jaredhanson/passport-local)
+* [Passport-twitter](https://github.com/jaredhanson/passport-twitter)
+* [Redis](https://github.com/antirez/redis)
+* [Socket.io](https://github.com/socketio/socket.io)
+* [Socket.io-redis](https://github.com/socketio/socket.io-redis)
+* [Winston](https://github.com/winstonjs/winston)
