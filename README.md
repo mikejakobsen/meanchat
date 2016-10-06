@@ -302,7 +302,41 @@ $(html).hide().appendTo('.chat-history ul').slideDown(200);
 
 https://github.com/mikejakobsen/meanchat/blob/Date-fix/gulpfile.js
 
+Gulp er en Javascript task runner, der gør det muligt at automatisere visse monotome opgaver, under udviklingen.
+Gulp benyttes bland andet til at [kompilere](https://github.com/mikejakobsen/meanchat/blob/Date-fix/gulpfile.js#L24) [SASS](https://github.com/mikejakobsen/meanchat/blob/Date-fix/src/styles/app.sass) til CSS. Samt at køre [BrowserSync](https://github.com/mikejakobsen/meanchat/blob/Date-fix/gulpfile.js#L78) under udviklingen, der automatisk `refresher` browseren, så ændrningerne vises løbende.
 
+| Gulp task | Funktion                                                 |
+|-----------|----------------------------------------------------------|
+| Images    | Komprimerer og eksporterer billeder                      |
+| Styles    | Compiler SASS, Autoprefix og eksporter                   |
+| Scripts   | Tjekker syntax, komprimerer og eksporterer `src/js`      |
+| Hint      | Kører Jshint på backend                                  |
+| Default   | Køres hvis man bare skriver Gulp - Kører styles, script. |
+| Watch     | Kører styles, scripts, browsersync og en Nodemon server. |
+
+Indledningsvis defineres en `Gulp.task`, som i eksemplet herunder med `scripts`.
+Dernæst defineres input filerne `gulp.src('src/js/**/*.js')`. I dette tilfælder omfatter det alle JavaScript filerne, og dermed filerne med endelsen `.js` i src mappen. Stjernen/asterisk symbolet er her wildcards.
+Dernæst tilføjes de omfattede filer til `Gulps stream`, hver `.pipe` instancierer dernæst et modul der er importeret i [Gulpfilen](https://github.com/mikejakobsen/meanchat/blob/Date-fix/gulpfile.js€L). Som fx. `.pipe(uglify())` der minificerer den importerede kode. For dernæst at compilede, de importeredde filer til `pipe(gulp.dest('static/js/'))`. Og dermed `static/js/` mappen, der loades af applikationen.
+
+
+gulp stream to be processed
+
+```javascript
+    gulp.task('scripts', function(){
+        return gulp.src('src/js/**/*.js')
+        .pipe(plumber({
+            errorHandler: function (error) {
+                console.log(error.message);
+                this.emit('end');
+            }}))
+            .pipe(jshint())
+            .pipe(beautify({indentSize: 2}))
+            .pipe(jshint.reporter('default'))
+            .pipe(babel())
+            .pipe(uglify())
+            .pipe(gulp.dest('static/js/'));
+    });
+```
 
 
 
