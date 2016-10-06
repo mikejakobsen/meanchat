@@ -1,19 +1,19 @@
 (function () {
     'use strict';
-    var gulp = require('gulp'),
-        plumber = require('gulp-plumber'),
-        rename = require('gulp-rename');
-    var autoprefixer = require('gulp-autoprefixer');
-    var babel = require('gulp-babel');
-    var jshint = require('gulp-jshint');
-    var imagemin = require('gulp-imagemin'),
-        cache = require('gulp-cache');
-    var sass = require('gulp-sass');
-    var browserSync = require('browser-sync');
-    var nodemon = require('gulp-nodemon');
-    var uglify = require('gulp-uglify');
-    var cssmin = require('gulp-cssmin');
-    var beautify = require('gulp-beautify');
+    var gulp            = require('gulp'),
+        plumber         = require('gulp-plumber'),
+        rename          = require('gulp-rename');
+    var autoprefixer    = require('gulp-autoprefixer');
+    var babel           = require('gulp-babel');
+    var jshint          = require('gulp-jshint');
+    var imagemin        = require('gulp-imagemin'),
+        cache           = require('gulp-cache');
+    var sass            = require('gulp-sass');
+    var browserSync     = require('browser-sync');
+    var nodemon         = require('gulp-nodemon');
+    var uglify          = require('gulp-uglify');
+    var cssmin          = require('gulp-cssmin');
+    var beautify        = require('gulp-beautify');
 
     gulp.task('images', function(){
         gulp.src('src/img/**/*')
