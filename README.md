@@ -96,44 +96,6 @@ Et eksempel funktionaliteren tilknyttet de enkelte [chat rum](https://github.com
 
 
 
-## Encryption
-
-https://github.com/kelektiv/node.bcrypt.js
-
-#### To hash a password:
-
-Bruger http://blowfish.cc encryption
-
-Technique 1 (generate a salt and hash on separate function calls):
-
-```javascript
-bcrypt.genSalt(saltRounds, function(err, salt) {
-    bcrypt.hash(myPlaintextPassword, salt, function(err, hash) {
-        // Store hash in your password DB.
-    });
-});
-```
-
-#### To check a password:
-
-```javascript
-// Load hash from your password DB.
-bcrypt.compare(myPlaintextPassword, hash, function(err, res) {
-    // res == true
-});
-bcrypt.compare(someOtherPlaintextPassword, hash, function(err, res) {
-    // res == false
-});
-```
-
-```javascript
-UserSchema.methods.validatePassword = function(password, callback) {
-	bcrypt.compare(password, this.password, function(err, isMatch) {
-		if (err) return callback(err);
-		callback(null, isMatch);
-	});
-};
-```
 ## Social Login
 
 Dependencies:
@@ -236,6 +198,69 @@ Og gemmes dernæst i databasen, i henhold til userschemaet. Den angivne kode enc
     "socialId" : null,
     "password" : "$2a$10$/JWVwNGlfozx8DauFwnnZeSvZXBmxGbOdM.gm7NK2rUfVZRBFqy12",
 }
+```
+## Encryption
+
+[bcrypt-nodejs](https://github.com/kelektiv/node.bcrypt.js)
+
+I tilfælder som dette, hvor brugeren eventuelt angiver et personligt password, er kryptering af dette password vigtigt. 
+For at passwordet ikke bare kan aflæses direkte fra databasen, hvis udefrakommende skulle få adgang til denne.
+
+For at opnå dette benyttes [bcrypt-nodejs](https://github.com/kelektiv/node.bcrypt.js     ), der via [Blowfish algoritmen](http://blowfish.css)krypterer passwordet.
+
+Et [bcrypt](https://en.wikipedia.org/wiki/Bcrypt) krypteret password kendetegnes ved begyndelsen "$2a$".
+
+Denne funktionalitet er en del af [userModel](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/database/schemas/user.js#L55), da bcrypt benyttes, både ved oprettelse, login samt evt. ændring af koden senere hen. 
+
+For at kryptere passwordet, benyttes to function calls, et indeholde antal `saltRounds`, der definerer hvor stærk krypteringen skal være.
+Samt det ukrypterede password.
+
+```javascript
+bcrypt.genSalt(saltRounds, function(err, salt) {
+    bcrypt.hash(myPlaintextPassword, salt, function(err, hash) {
+        // Gem password
+    });
+});
+```
+
+```javascript
+	bcrypt.genSalt(SALTROUNDS, function(err, salt) {
+		if (err) return next(err);
+
+		// Kør hash på user.password, med det salt vi lige lavede
+		bcrypt.hash(user.password, salt, null, function(err, hash) {
+			if (err) return next(err);
+
+			// overskriv user.password med hash værdien
+			// der gemmes.
+			user.password = hash;
+			next();
+		});
+	});
+```
+
+Denne funktion overskriv dermed [user.password](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/database/schemas/user.js#L64) variablen, og krypterer dermed det indtastede password.
+
+
+For at application dernæst kan tjekke det ukrypterede password, og imod det krypterede gemte password, kaldes [bcrypt.compare](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/database/schemas/user.js#L77).  Der i tilfældet at det indtastede password matcher, det i databasen. Videregiver callbacket `isMatch`. Der slutteligt valideres i [Authentification](https://github.com/mikejakobsen/meanchat/blob/fe3b2b08f7df79635ee9534c2fb00e84119c43e3/app/auth/index.js#L45) delen af applikationen.
+
+```javascript
+// Load hash fra databasen
+bcrypt.compare(myPlaintextPassword, hash, function(err, res) {
+    // res == true
+});
+bcrypt.compare(someOtherPlaintextPassword, hash, function(err, res) {
+    // res == false
+});
+```
+
+```javascript
+UserSchema.methods.validatePassword = function(password, callback) {
+	bcrypt.compare(password, this.password, function(err, isMatch) {
+		if (err) return callback(err);
+		callback(null, isMatch);
+	});
+};
 ```
 
 ## Time since function
