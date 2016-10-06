@@ -3,14 +3,14 @@
 
     var Mongoose  = require('mongoose');
 
-    ////var message = require('./message.js');
-
-
     /**
      * Hver forbindelse er en bruger forbundet via en socket
      * Hver forbindelse er et userId + socketID
      *
      */
+
+    // Valider at det kun er bogstaver
+    var validateTitle = /[a-zA-Z]/;
 
     var MessageSchema = Mongoose.Schema({
         content: { type: String, required: true},
@@ -20,7 +20,7 @@
 
     var RoomSchema = new Mongoose.Schema({
         // #Todo add more validation
-        title: { type: String },
+        title: { type: String, required: true, match: validateTitle },
         connections: { type: [{ userId: String, socketId: String }]},
         messages: [MessageSchema]
     });

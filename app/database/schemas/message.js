@@ -18,8 +18,5 @@
     module.exports = Mongoose.model('message', MessageSchema);
 
 
-    // Eksporter Schemaet
-    //module.exports = messageModel;
-    //module.exports = MessageSchema;
-    //module.exports = { MessageSchema: MessageSchema, messageModel: messageModel }
 }());
+

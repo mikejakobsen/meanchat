@@ -368,6 +368,53 @@ For dernæst at compilede, de importeredde filer til `pipe(gulp.dest('static/js/
     });
 ```
 
+## Mongoose
+
+```javascript
+    // Valider at det kun er bogstaver
+    var validateTitle = /[a-zA-Z]/;
+
+    var MessageSchema = Mongoose.Schema({
+        content: { type: String, required: true},
+        date: { type: Date, default: Date.now },
+        username: { type: String, required: true}
+    });
+
+    var RoomSchema = new Mongoose.Schema({
+        // #Todo add more validation
+        title: { type: String, required: true, match: validateTitle },
+        connections: { type: [{ userId: String, socketId: String }]},
+        messages: [MessageSchema]
+    });
+```
+
+```javascript
+{
+  "_id": ObjectId("57f61a7d470b7b2d4f4b4798"),
+  "title": "RoomName",
+  "messages": [
+    {
+      "content": "Hvad så der?",
+      "username": "Mike Jakobsen",
+      "_id": ObjectId("57f61a82470b7b2d4f4b479a"),
+      "date": ISODate("2016-10-06T09:33:54.102Z")
+    },
+    {
+      "content": "Hej",
+      "username": "Mike Jakobsen",
+      "_id": ObjectId("57f61e99470b7b2d4f4b479c"),
+      "date": ISODate("2016-10-06T09:51:21.431Z")
+    }
+  ],
+  "connections": [
+    {
+      "userId": "57f61a78470b7b2d4f4b4797",
+      "socketId": "/chatroom#ea1XX0C3-AnjakmvAAAH",
+      "_id": ObjectId("57f61e96470b7b2d4f4b479b")
+    }
+  ]
+}
+```
 
 
 
