@@ -19,43 +19,43 @@ Excersise description http://www.mikejakobsen.com/stuff/mandatory-1.pdf
 ```
 .
 ├── README.md
-├── app
+├── app -> Base directory backend
 │   ├── auth
-│   │   └── index.js
+│   │   └── index.js -> Authentification
 │   ├── config
-│   │   ├── config.json
+│   │   ├── config.json -> Config file containing Facebook/Twitter/Redis tokens
 │   │   └── index.js
 │   ├── database
-│   │   ├── index.js
+│   │   ├── index.js -> DB connection and Schema import
 │   │   └── schemas
-│   │       ├── message.js
-│   │       ├── room.js
-│   │       └── user.js
+│   │       ├── message.js -> Message schema
+│   │       ├── room.js -> Room schema
+│   │       └── user.js -> User schema
 │   ├── logger
-│   │   └── index.js
+│   │   └── index.js -> Winston logger
 │   ├── models
-│   │   ├── message.js
-│   │   ├── room.js
-│   │   └── user.js
+│   │   ├── message.js -> Message model
+│   │   ├── room.js -> Room model
+│   │   └── user.js -> User model
 │   ├── routes
-│   │   └── index.js
+│   │   └── index.js -> Routing
 │   ├── session
-│   │   └── index.js
+│   │   └── index.js -> Connect-Mongo sessions
 │   ├── socket
-│   │   └── index.js
+│   │   └── index.js -> Socket.io functionality
 │   └── views
-│       ├── chatroom.ejs
-│       ├── head.ejs
-│       ├── login.ejs
-│       └── rooms.ejs
-├── bower.json
-├── debug.log
+│       ├── chatroom.ejs -> Chatroom view
+│       ├── head.ejs -> HTML header 
+│       ├── login.ejs -> Login view
+│       └── rooms.ejs -> Room list view
+├── bower.json -> Bower config
+├── debug.log -> Winston logs
 ├── docs
 │   └── README.md
-├── gulpfile.js
-├── package.json
-├── server.js
-├── src
+├── gulpfile.js -> Gulptasks
+├── package.json -> NPM config/ import modules
+├── server.js -> Node.js server instance
+├── src ->
 │   ├── img
 │   │   └── user.jpg
 │   ├── js
@@ -65,7 +65,7 @@ Excersise description http://www.mikejakobsen.com/stuff/mandatory-1.pdf
 │   └── styles
 │       ├── app.sass
 │       └── variables.sass
-├── static
+├── static -> Compiled frontend files
 │   ├── css
 │   │   └── app.css
 │   ├── img
