@@ -297,8 +297,6 @@ Mongoose er en (ODM) `object data modeling`, der gør det muligt at fastsætte e
 
 Kontra en `ORM` som fx. [Laravel Elequent](https://laravel.com/docs/master/eloquent). Der `mapper` SQL-syntaxen så PHP kan interagere med SQL. Behøver en `ODM` som Mongoose ikke redefinere forholdet imellem database og applicationen, da `JSON` og `BSON` interager gnindningsfrit.
 
-#Todo skriv om query
-
 
 ## EJS
 
