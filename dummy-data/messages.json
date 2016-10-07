@@ -1,0 +1,32 @@
+[
+	{
+		"_id" : ObjectId("57f781cbbb48c262d41c26d2"),
+		"title" : "Chat",
+		"messages" : [
+			{
+				"content" : "Hej Mike",
+				"username" : "sarah",
+				"_id" : ObjectId("57f786966bc0bf892003e7aa"),
+				"date" : ISODate("2016-10-07T11:27:18.387Z")
+			},
+			{
+				"content" : "Hej du",
+				"username" : "Mike Jakobsen",
+				"_id" : ObjectId("57f7869d6bc0bf892003e7ab"),
+				"date" : ISODate("2016-10-07T11:27:25.164Z")
+			}
+		],
+		"connections" : [
+			{
+				"userId" : "57f77a97bb48c262d41c26d1",
+				"socketId" : "/chatroom#79Md-MM96uFdvJUoAAAC",
+				"_id" : ObjectId("57f781cdbb48c262d41c26d3")
+			},
+			{
+				"userId" : "57f786296bc0bf892003e7a6",
+				"socketId" : "/chatroom#vg6jra-g0KlGrDVHAAAS",
+				"_id" : ObjectId("57f786f46bc0bf892003e7b0")
+			}
+		]
+	}
+]

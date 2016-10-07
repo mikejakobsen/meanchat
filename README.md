@@ -285,6 +285,8 @@ Mongoose er en (ODM) `object data modeling`, der gør det muligt at fastsætte e
 
 Kontra en `ORM` som fx. [Laravel Elequent](https://laravel.com/docs/master/eloquent). Der `mapper` SQL-syntaxen så PHP kan interagere med SQL. Behøver en `ODM` som Mongoose ikke redefinere forholdet imellem database og applicationen, da `JSON` og `BSON` interager gnindningsfrit.
 
+#Todo skriv om query
+
 
 ## EJS
 
@@ -400,9 +402,9 @@ Kontrær en SQL baseret datamodel, er disse beskeder nested i `Rooms` collection
 mongo --quiet mikejakobsenchat --eval 'printjson(db.rooms.find().toArray())' > rooms.json
 ```
 
-En query gemt i filen rooms.json vil 
+En query gemt i filen [rooms.json](https://github.com/mikejakobsen/meanchat/blob/Date-fix/dummy-data/rooms.json) vil derfor returnere et rum der har et `userId` samt et `socketId` tilknyttet, der tilkendegiver de brugere der er til stedet i chatrummet. 
 
-Rooms collectionen.
+Samt et tomt [messages-array](https://github.com/mikejakobsen/meanchat/blob/Date-fix/dummy-data/rooms.json#L5). Der senere vil indeholde eventuelle beskeder.
 
 ```javascript
 [
@@ -420,33 +422,42 @@ Rooms collectionen.
 	}
 ]
 ```
+### Messages
 
 ```javascript
-{
-  "_id": ObjectId("57f61a7d470b7b2d4f4b4798"),
-  "title": "RoomName",
-  "messages": [
-    {
-      "content": "Hej allesammen",
-      "username": "Mike Jakobsen",
-      "_id": ObjectId("57f61a82470b7b2d4f4b479a"),
-      "date": ISODate("2016-10-06T09:33:54.102Z")
-    },
-    {
-      "content": "Hvad' så der?",
-      "username": "Mike Jakobsen",
-      "_id": ObjectId("57f61e99470b7b2d4f4b479c"),
-      "date": ISODate("2016-10-06T09:51:21.431Z")
-    }
-  ],
-  "connections": [
-    {
-      "userId": "57f61a78470b7b2d4f4b4797",
-      "socketId": "/chatroom#ea1XX0C3-AnjakmvAAAH",
-      "_id": ObjectId("57f61e96470b7b2d4f4b479b")
-    }
-  ]
-}
+[
+	{
+		"_id" : ObjectId("57f781cbbb48c262d41c26d2"),
+		"title" : "Chat",
+		"messages" : [
+			{
+				"content" : "Hej Mike",
+				"username" : "Sarah",
+				"_id" : ObjectId("57f786966bc0bf892003e7aa"),
+				"date" : ISODate("2016-10-07T11:27:18.387Z")
+			},
+			{
+				"content" : "Hej du",
+				"username" : "Mike Jakobsen",
+				"_id" : ObjectId("57f7869d6bc0bf892003e7ab"),
+				"date" : ISODate("2016-10-07T11:27:25.164Z")
+			}
+		],
+		"connections" : [
+			{
+				"userId" : "57f77a97bb48c262d41c26d1",
+				"socketId" : "/chatroom#79Md-MM96uFdvJUoAAAC",
+				"_id" : ObjectId("57f781cdbb48c262d41c26d3")
+			},
+			{
+				"userId" : "57f786296bc0bf892003e7a6",
+				"socketId" : "/chatroom#vg6jra-g0KlGrDVHAAAS",
+				"_id" : ObjectId("57f786f46bc0bf892003e7b0")
+			}
+		]
+	}
+]
+
 ```
 
 
@@ -469,6 +480,21 @@ Rooms collectionen.
 ```
 
 MessageSchema er derfor `nested`
+
+
+### Messages query
+
+```SQL
+SELECT 
+  `messages`.*, 
+  CONCAT(u.`firstname`, " ", u.`lastname`) as `nameFrom`,
+  CONCAT(u2.`firstname`, " ", u2.`lastname`) as `nameTo`
+FROM `messages`     
+  INNER JOIN 
+     `users` u ON `messages`.`from` = u.`id`
+  INNER JOIN 
+     `users` u2 ON `messages`.`to` = u2.`id`
+```
 
 
 
