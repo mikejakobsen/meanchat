@@ -392,7 +392,9 @@ mongo --quiet mikejakobsenchat --eval 'printjson(db.users.find().toArray())'
 ]
 ```
 
-I forhold til chatrummene og beskederne tilknyttet disse chatrum. Oprettes disse i en separat collection kaldet `Rooms`
+I forhold til chatrummene og beskederne tilknyttet disse chatrum. Oprettes disse i en separat collection kaldet `Rooms`.
+
+Kontrær en SQL baseret datamodel, er disse beskeder nested i `Rooms` collectionen. Da de er tilknyttet som elementer af det enkelte chatrum. 
 
 ```javascript
 mongo --quiet mikejakobsenchat --eval 'printjson(db.rooms.find().toArray())' > rooms.json
