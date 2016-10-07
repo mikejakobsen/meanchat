@@ -5,14 +5,12 @@
 
 ## To do
 
-```
 - [x] npm install && bower install
 - [ ] Production: Gulp watch
-- [ ] For viewing pleasue only: nodemon
+- [ ] For viewing pleasure only, run: nodemon
 - [ ] http://localhost:3000
-```
 
-Excersise description http://www.mikejakobsen.com/stuff/mandatory-1.pdf
+Opgave beskrivelse: http://www.mikejakobsen.com/stuff/mandatory-1.pdf
 
 ## Opbygning
 
@@ -45,7 +43,7 @@ Excersise description http://www.mikejakobsen.com/stuff/mandatory-1.pdf
 │   │   └── index.js -> Socket.io functionality
 │   └── views
 │       ├── chatroom.ejs -> Chatroom view
-│       ├── head.ejs -> HTML header 
+│       ├── head.ejs -> HTML header
 │       ├── login.ejs -> Login view
 │       └── rooms.ejs -> Room list view
 ├── bower.json -> Bower config
@@ -124,7 +122,7 @@ router.get('/', function(req, res, next) {
 		// req.flash
 		res.render('login', {
 			success: req.flash('success')[0],
-			errors: req.flash('error'), 
+			errors: req.flash('error'),
 			showRegisterForm: req.flash('showRegisterForm')[0]
 		});
 	}
@@ -203,14 +201,14 @@ Og gemmes dernæst i databasen, i henhold til userschemaet. Den angivne kode enc
 
 [bcrypt-nodejs](https://github.com/kelektiv/node.bcrypt.js)
 
-I tilfælder som dette, hvor brugeren eventuelt angiver et personligt password, er kryptering af dette password vigtigt. 
+I tilfælder som dette, hvor brugeren eventuelt angiver et personligt password, er kryptering af dette password vigtigt.
 For at passwordet ikke bare kan aflæses direkte fra databasen, hvis udefrakommende skulle få adgang til denne.
 
 For at opnå dette benyttes [bcrypt-nodejs](https://github.com/kelektiv/node.bcrypt.js     ), der via [Blowfish algoritmen](http://blowfish.css)krypterer passwordet.
 
 Et [bcrypt](https://en.wikipedia.org/wiki/Bcrypt) krypteret password kendetegnes ved begyndelsen "$2a$".
 
-Denne funktionalitet er en del af [userModel](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/database/schemas/user.js#L55), da bcrypt benyttes, både ved oprettelse, login samt evt. ændring af koden senere hen. 
+Denne funktionalitet er en del af [userModel](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/database/schemas/user.js#L55), da bcrypt benyttes, både ved oprettelse, login samt evt. ændring af koden senere hen.
 
 For at kryptere passwordet, benyttes to function calls, et indeholde antal `saltRounds`, der definerer hvor stærk krypteringen skal være.
 Samt det ukrypterede password.
@@ -283,9 +281,9 @@ For at ændre tidsangivelserne i beskederne, kaldes `moment(message.date)` derfo
 
 ## Mongoose
 
-Mongoose er en (ODM) `object data modeling`, der gør det muligt at fastsætte en [datamodel](https://github.com/mikejakobsen/meanchat/tree/Date-fix/app/database/schemas), og dermed en struktur i den gemte data. 
+Mongoose er en (ODM) `object data modeling`, der gør det muligt at fastsætte en [datamodel](https://github.com/mikejakobsen/meanchat/tree/Date-fix/app/database/schemas), og dermed en struktur i den gemte data.
 
-Kontra en `ORM` som fx. [Laravel Elequent](https://laravel.com/docs/master/eloquent). Der `mapper` SQL-syntaxen så PHP kan interagere med SQL. Behøver en `ODM` som Mongoose ikke redefinere forholdet imellem database og applicationen, da `JSON` og `BSON` interager gnindningsfrit. 
+Kontra en `ORM` som fx. [Laravel Elequent](https://laravel.com/docs/master/eloquent). Der `mapper` SQL-syntaxen så PHP kan interagere med SQL. Behøver en `ODM` som Mongoose ikke redefinere forholdet imellem database og applicationen, da `JSON` og `BSON` interager gnindningsfrit.
 
 
 ## EJS
@@ -345,7 +343,7 @@ Gulp benyttes bland andet til at [kompilere](https://github.com/mikejakobsen/mea
 
 Indledningsvis defineres en `Gulp.task`, som i eksemplet herunder med `scripts`.
 Dernæst defineres input filerne `gulp.src('src/js/**/*.js')`. I dette tilfælder omfatter det alle JavaScript filerne, og dermed filerne med endelsen `.js` i src mappen. Stjernen/asterisk symbolet er her wildcards.
-Dernæst tilføjes de omfattede filer til `Gulps stream`, hver `.pipe` instancierer dernæst et modul der er importeret i [Gulpfilen](https://github.com/mikejakobsen/meanchat/blob/Date-fix/gulpfile.js). Som fx. `.pipe(uglify())` der minificerer den importerede kode. 
+Dernæst tilføjes de omfattede filer til `Gulps stream`, hver `.pipe` instancierer dernæst et modul der er importeret i [Gulpfilen](https://github.com/mikejakobsen/meanchat/blob/Date-fix/gulpfile.js). Som fx. `.pipe(uglify())` der minificerer den importerede kode.
 
 For dernæst at compilede, de importeredde filer til `pipe(gulp.dest('static/js/'))`. Og dermed `static/js/` mappen, der loades af applikationen.
 
@@ -368,25 +366,32 @@ For dernæst at compilede, de importeredde filer til `pipe(gulp.dest('static/js/
     });
 ```
 
-## Mongoose
+## Data modeling
+
+For at få applikationen til at agere dynamisk med brugeren, benyttes [MongoDB](https://www.mongodb.org) til at forankre dataen.
+
+MongoDB er baseret på BSON, der er binary form for JSON, og dermed en seralisering af JSON. Fordelen ved at benytte BSON og dermed også JSON som primær datakilde, er at JSON basalt set er et Javascript object, og dermed arbejder gnindningsfrit med en Javascript baserede applikation som denne.
+
+I forhold til brugerne af applikationen, vil de derfor blive oprettet i en `Users` collection.
 
 ```javascript
-    // Valider at det kun er bogstaver
-    var validateTitle = /[a-zA-Z]/;
-
-    var MessageSchema = Mongoose.Schema({
-        content: { type: String, required: true},
-        date: { type: Date, default: Date.now },
-        username: { type: String, required: true}
-    });
-
-    var RoomSchema = new Mongoose.Schema({
-        // #Todo add more validation
-        title: { type: String, required: true, match: validateTitle },
-        connections: { type: [{ userId: String, socketId: String }]},
-        messages: [MessageSchema]
-    });
+mongo --quiet mikejakobsenchat --eval 'printjson(db.users.find().toArray())'
 ```
+
+Den overstående query på denne collection, vil derfor returnere. Et JSON object lignende det nedenstående.
+
+```json
+{
+  "_id" : ObjectId("57f6bca8db17a743faf9e248"),
+  "username" : "Mike Jakobsen",
+  "picture" : "https://scontent.xx.fbcdn.net/v/t1.0-1/c13.0.50.50/p50x50/312809_2005127862915_182821112_n.jpg?oh=9571576a98c9983a914fed90faf837f1&oe=58AA3242",
+  "socialId" : "10205546897186862",
+  "password" : null,
+}
+```
+
+
+Rooms collectionen.
 
 ```javascript
 {
@@ -394,13 +399,13 @@ For dernæst at compilede, de importeredde filer til `pipe(gulp.dest('static/js/
   "title": "RoomName",
   "messages": [
     {
-      "content": "Hvad så der?",
+      "content": "Hej allesammen",
       "username": "Mike Jakobsen",
       "_id": ObjectId("57f61a82470b7b2d4f4b479a"),
       "date": ISODate("2016-10-06T09:33:54.102Z")
     },
     {
-      "content": "Hej",
+      "content": "Hvad' så der?",
       "username": "Mike Jakobsen",
       "_id": ObjectId("57f61e99470b7b2d4f4b479c"),
       "date": ISODate("2016-10-06T09:51:21.431Z")
@@ -417,10 +422,33 @@ For dernæst at compilede, de importeredde filer til `pipe(gulp.dest('static/js/
 ```
 
 
+```javascript
+    // Valider at rum navnet start med et bogstav A-Z
+    var validateTitle = /[a-zA-Z]/;
+
+    var MessageSchema = Mongoose.Schema({
+        content: { type: String, required: true},
+        date: { type: Date, default: Date.now },
+        username: { type: String, required: true}
+    });
+
+    var RoomSchema = new Mongoose.Schema({
+        // #Todo add more validation
+        title: { type: String, required: true, match: validateTitle },
+        connections: { type: [{ userId: String, socketId: String }]},
+        messages: [MessageSchema]
+    });
+```
+
+MessageSchema er derfor `nested`
+
+
+
+
 
 ## Dependencies
 
-* [Bcrypt-nodejs](httptps://github.com/mikejakobsen/meanchat/tree/Date-fix)
+* [Bcrypt-nodejs](https://www.npmjs.com/package/bcrypt-nodejs)
 * [Body-parser](https://github.com/expressjs/body-parser)
 * [Connect-flash](https://github.com/jaredhanson/connect-flash)
 * [Connect-mongo](https://github.com/jdesboeufs/connect-mongo)

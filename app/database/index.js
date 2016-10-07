@@ -6,7 +6,7 @@
     var logger 		= require('../logger');
 
     // Localhost forbindelse - Chat DB
-    Mongoose.connect('mongodb://localhost/chat');
+    Mongoose.connect('mongodb://localhost/mikejakobsenchat');
 
     // Fejl
     Mongoose.connection.on('error', function(err) {
