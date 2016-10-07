@@ -374,24 +374,50 @@ MongoDB er baseret på BSON, der er binary form for JSON, og dermed en seraliser
 
 I forhold til brugerne af applikationen, vil de derfor blive oprettet i en `Users` collection.
 
+Den nedenstående query på denne collection kan køres direkte fra din shell, og vil returnere. Et array af JSON objekter lignende det nedenstående, indholdende alle brugerne.
+
 ```javascript
 mongo --quiet mikejakobsenchat --eval 'printjson(db.users.find().toArray())'
 ```
-
-Den overstående query på denne collection, vil derfor returnere. Et JSON object lignende det nedenstående.
-
-```json
-{
-  "_id" : ObjectId("57f6bca8db17a743faf9e248"),
-  "username" : "Mike Jakobsen",
-  "picture" : "https://scontent.xx.fbcdn.net/v/t1.0-1/c13.0.50.50/p50x50/312809_2005127862915_182821112_n.jpg?oh=9571576a98c9983a914fed90faf837f1&oe=58AA3242",
-  "socialId" : "10205546897186862",
-  "password" : null,
-}
+### Users collection
+```javascript
+[
+	{
+	"_id" : ObjectId("57f6bca8db17a743faf9e248"),
+	"username" : "Mike Jakobsen",
+	"picture" : "https://scontent.xx.fbcdn.net/v/t1.0-1/c13.0.50.50/p50x50/312809_2005127862915_182821112_n.jpg?oh=9571576a98c9983a914fed90faf837f1&oe=58AA3242",
+	"socialId" : "102055468971868xx",
+	"password" : null,
+	}
+]
 ```
 
+I forhold til chatrummene og beskederne tilknyttet disse chatrum. Oprettes disse i en separat collection kaldet `Rooms`
+
+```javascript
+mongo --quiet mikejakobsenchat --eval 'printjson(db.rooms.find().toArray())' > rooms.json
+```
+
+En query gemt i filen rooms.json vil 
 
 Rooms collectionen.
+
+```javascript
+[
+	{
+		"_id" : ObjectId("57f781cbbb48c262d41c26d2"),
+		"title" : "Chat",
+		"messages" : [ ],
+		"connections" : [
+			{
+				"userId" : "57f77a97bb48c262d41c26d1",
+				"socketId" : "/chatroom#79Md-MM96uFdvJUoAAAC",
+				"_id" : ObjectId("57f781cdbb48c262d41c26d3")
+			}
+		]
+	}
+]
+```
 
 ```javascript
 {

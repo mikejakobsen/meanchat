@@ -1,0 +1,15 @@
+[
+	{
+		"_id" : ObjectId("57f781cbbb48c262d41c26d2"),
+		"title" : "Chat",
+		"messages" : [ ],
+		"connections" : [
+			{
+				"userId" : "57f77a97bb48c262d41c26d1",
+				"socketId" : "/chatroom#79Md-MM96uFdvJUoAAAC",
+				"_id" : ObjectId("57f781cdbb48c262d41c26d3")
+			}
+		],
+		"__v" : 1
+	}
+]
