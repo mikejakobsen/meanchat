@@ -424,6 +424,12 @@ Samt et tomt [messages-array](https://github.com/mikejakobsen/meanchat/blob/Date
 ```
 ### Messages
 
+```
+mongo --quiet mikejakobsenchat --eval 'printjson(db.rooms.find({title: "Chat"}).toArray())' > messages.json
+```
+
+En query på beskeder tilknyttet chat rummet, vil derfor returnere.
+
 ```javascript
 [
 	{
