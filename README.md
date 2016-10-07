@@ -6,9 +6,21 @@
 ## To do
 
 - [x] npm install && bower install
+- [ ] redis-server
 - [ ] Production: Gulp watch
 - [ ] For viewing pleasure only, run: nodemon
 - [ ] http://localhost:3000
+
+Info: For at gøre projektet, kræves en server instans af [Redis](http://redis.io)
+
+Redis installeres via `Brew install redis` eller via wget:
+
+```bash
+	$ wget http://download.redis.io/redis-stable.tar.gz:
+	$ tar xvzf redis-stable.tar.gz
+	$ cd redis-stable
+	$ make
+```
 
 Opgave beskrivelse: http://www.mikejakobsen.com/stuff/mandatory-1.pdf
 
@@ -428,7 +440,10 @@ Samt et tomt [messages-array](https://github.com/mikejakobsen/meanchat/blob/Date
 mongo --quiet mikejakobsenchat --eval 'printjson(db.rooms.find({title: "Chat"}).toArray())' > messages.json
 ```
 
-En query på beskeder tilknyttet chat rummet, vil derfor returnere.
+En query på beskeder tilknyttet chat rummet, vil derfor [returnere](https://github.com/mikejakobsen/meanchat/blob/Date-fix/dummy-data/messages.json). 
+Her ses `messages arrayet` der i stedet for blot at være et tomt, indeholder to objekter. 
+
+Med beskedens indhold, afsenders username, en timestamp same et unikt ObjectId.
 
 ```javascript
 [
@@ -466,6 +481,35 @@ En query på beskeder tilknyttet chat rummet, vil derfor returnere.
 
 ```
 
+### Data Schema / Mongoose
+
+Kontrær SQL kræver en Non-Relational database som MongoDB ikke et predefined schema. 
+
+I tilfældet med denne applikation har vi dog valgt at predefinere schemaer, via Mongoose.
+For på denne vis at sikre, at kun den specificerede data, kan indsættes i de pågældende objekter i databasen.
+
+Herunder ses det definerede schema for `Users` collectionen.
+Grundet muligheden for både at oprette en bruger via Facebook/Twitter, samt via generisk bruger oprettelse.
+Indeholde dette [UserSchema](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/database/schemas/user.js) dog en hvis fleksibilitet. Da et Login via Facebook/Twitter kræver et Username, picture samt [socialId](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/database/schemas/user.js#L29) er username defineret til at required, unikt samt eventuelle duplikerede username entiteter ikke er tilladt. Da `socialId` kun benyttes ved oprettelse via disse tjenester er denne value defineret til at være null som udgangspunkt. Ligeledes benyttes password ikke her, så denne værdi er ligeledes defineret til null, da en mangel på denne værdi stadig genererer et validt bruger objekt.
+
+I tilfældet med brugeroprettelse udelukkende ved brug af username og password. Benyttes derfor `username`, `password` samt et generisk profil billede tilføjes ud fra konstanten [const DEFAULT_USER_PICTURE](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/database/schemas/user.js#L11) der agerer default værdi, så i tilfældet at `picture` ikke specificeres direkte, vil denne image-path blive tilføjet som værdi.
+
+```javascript
+    var UserSchema = new Mongoose.Schema({
+        username: { type: String, required: true, unique: true, dropDups: true},
+        // Default: null da social ikke behøver password
+        // og alm bruger ikke behover socialId
+        password: { type: String, default: null },
+        socialId: { type: String, default: null },
+        picture:  { type: String, default:  DEFAULT_USER_PICTURE}
+    });
+```
+
+I forhold til `Rooms collectionen` består denne af to Schemas, det overliggende [RoomSchema](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/database/schemas/room.js#L21). Der her indeholder titlen på rummet, samt et array med de forbundne brugere. Samt edet nestede schema [MessageSchema](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/database/schemas/room.js#L15) der specificerer indholdet af det underliggende [MessagesSchema](https://github.com/mikejakobsen/meanchat/blob/Date-fix/dummy-data/messages.json#L5).
+
+Dette schema indeholder ligeledes titel validering. Via et [Regex pattern](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/database/schemas/room.js#L13) der specificerer at `title` skal starte med et `lowercase/uppercase` bogstav imellem A-Z i alfabetet. 
+
+Denne validering tilføjes dernæst via [match](http://mongoosejs.com/docs/api.html#schema_string_SchemaString-match) funktionaliteten i Mongoose.
 
 ```javascript
     // Valider at rum navnet start med et bogstav A-Z
@@ -484,26 +528,6 @@ En query på beskeder tilknyttet chat rummet, vil derfor returnere.
         messages: [MessageSchema]
     });
 ```
-
-MessageSchema er derfor `nested`
-
-
-### Messages query
-
-```SQL
-SELECT 
-  `messages`.*, 
-  CONCAT(u.`firstname`, " ", u.`lastname`) as `nameFrom`,
-  CONCAT(u2.`firstname`, " ", u2.`lastname`) as `nameTo`
-FROM `messages`     
-  INNER JOIN 
-     `users` u ON `messages`.`from` = u.`id`
-  INNER JOIN 
-     `users` u2 ON `messages`.`to` = u2.`id`
-```
-
-
-
 
 
 ## Dependencies
