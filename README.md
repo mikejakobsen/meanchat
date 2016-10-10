@@ -527,6 +527,25 @@ Denne validering tilføjes dernæst via [match](http://mongoosejs.com/docs/api.h
     });
 ```
 
+## Quering the Collections.
+
+Info ligeledes her https://github.com/mikejakobsen/mongoose#query
+
+
+```JavaScript
+var addUser = function(room, socket, callback){
+
+	// Hent BrugerID
+	var userId = socket.request.session.passport.user;
+
+	// Push en ny forbindelse {userId + socketId}
+	var conn = { userId: userId, socketId: socket.id};
+	room.connections.push(conn);
+	// #Todo er callback nødvendig?
+	room.save(callback);
+};
+```
+
 
 ## Dependencies
 
