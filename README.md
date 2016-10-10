@@ -11,7 +11,7 @@
 - [ ] For viewing pleasure only, run: nodemon
 - [ ] http://localhost:3000
 
-Info: For at gøre projektet, kræves en server instans af [Redis](http://redis.io)
+Info: For at køre projektet, kræves en server instans af [Redis](http://redis.io)
 
 Redis installeres via `Brew install redis` eller via wget:
 
