@@ -1,21 +1,21 @@
 'use strict';
 
 // Hent depencies
-var express 	    = require('express');
-var app  		    = express();
-var path 		    = require('path');
-var bodyParser 	    = require('body-parser');
-var flash 		    = require('connect-flash');
-var moment          = require('moment');
+var express    = require('express');
+var app        = express();
+var path       = require('path');
+var bodyParser = require('body-parser');
+var flash      = require('connect-flash');
+var moment     = require('moment');
 moment().format();
 
 
 // Componenter - alle de forskellige filer, linkes nærmest her
-var routes 		= require('./app/routes');
-var session 	= require('./app/session');
-var passport    = require('./app/auth');
-var ioServer 	= require('./app/socket')(app);
-var logger 		= require('./app/logger');
+var routes   = require('./app/routes');
+var session  = require('./app/session');
+var passport = require('./app/auth');
+var ioServer = require('./app/socket')(app);
+var logger   = require('./app/logger');
 
 // Sti til View filerne
 app.set('views', path.join(__dirname, 'app/views'));

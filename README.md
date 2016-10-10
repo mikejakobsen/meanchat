@@ -503,7 +503,7 @@ I tilfældet med brugeroprettelse udelukkende ved brug af username og password. 
     });
 ```
 
-I forhold til `Rooms collectionen` består denne af to Schemas, det overliggende [RoomSchema](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/database/schemas/room.js#L21). Der her indeholder titlen på rummet, samt et array med de forbundne brugere. Samt edet nestede schema [MessageSchema](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/database/schemas/room.js#L15) der specificerer indholdet af det underliggende [MessagesSchema](https://github.com/mikejakobsen/meanchat/blob/Date-fix/dummy-data/messages.json#L5).
+I forhold til `Rooms collectionen` består denne af to Schemas, det overliggende [RoomSchema](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/database/schemas/room.js#L21). Der her indeholder titlen på rummet, samt et array med de forbundne brugere. Samt edet nested schema [MessageSchema](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/database/schemas/room.js#L15) der specificerer indholdet af det underliggende [MessagesSchema](https://github.com/mikejakobsen/meanchat/blob/Date-fix/dummy-data/messages.json#L5).
 
 Dette schema indeholder ligeledes titel validering. Via et [Regex pattern](https://github.com/mikejakobsen/meanchat/blob/Date-fix/app/database/schemas/room.js#L13) der specificerer at `title` skal starte med et `lowercase/uppercase` bogstav imellem A-Z i alfabetet. 
 
