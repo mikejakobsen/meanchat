@@ -1,22 +1,19 @@
-(function () {
-    'use strict';
+;(function () {
+  'use strict'
 
-    var Mongoose = require('mongoose');
+  var Mongoose = require('mongoose')
 
-    /**
-     * Beskeder
-     *
-     */
+  /**
+   * Beskeder
+   *
+   */
 
-    var MessageSchema = Mongoose.Schema({
-        content: { type: String, required: true},
-        date: { type: Date, default: Date.now },
-        username: { type: String, required: true}
-    });
+  var MessageSchema = Mongoose.Schema
+  ;({
+    content: { type: String, required: true},
+    date: { type: Date, default: Date.now },
+    username: { type: String, required: true}
+  })
 
-
-    module.exports = Mongoose.model('message', MessageSchema);
-
-
-}());
-
+  module.exports = Mongoose.model('message', MessageSchema)
+}())

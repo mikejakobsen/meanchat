@@ -1,10 +1,10 @@
 (function () {
-    'use strict';
+  'use strict'
 
-    var init = function () {
+  var init = function () {
         // For at skjule tokens til twitter og facebook fra Github
-        return require('./config.json');
-    };
+    return require('./config.json')
+  }
 
-    module.exports = init();
-}());
+  module.exports = init()
+}())

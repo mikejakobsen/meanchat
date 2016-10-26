@@ -1,0 +1,569 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/585aa63/
+$push	app/socket/index.js	/^                                           { $push: {messages: msg}},$/;"	o
+*	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+*	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	s
+.Facebook	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.Twitter	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.align-left	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.align-left	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.align-right	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.align-right	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.chat	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.chat	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.chat .chat-header	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.chat .chat-header	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.chat .chat-header .chat-about	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.chat .chat-header .chat-about	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.chat .chat-header .chat-num-messages	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.chat .chat-header .chat-num-users	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.chat .chat-header .chat-room	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.chat .chat-header .chat-with	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.chat .chat-header .fa-key	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.chat .chat-header .fa-rooms	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.chat .chat-header img	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.chat .chat-header img	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	s
+.chat .chat-history	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.chat .chat-history	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.chat .chat-history .message	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.chat .chat-history .message	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.chat .chat-history .message-away	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.chat .chat-history .message-away:before	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.chat .chat-history .message-data	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.chat .chat-history .message-data	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.chat .chat-history .message-data-away	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.chat .chat-history .message-data-name-away	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.chat .chat-history .message-data-time	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.chat .chat-history .message-data-time	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.chat .chat-history .message-data-time-away	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.chat .chat-history .message:after	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.chat .chat-history .message:before	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.chat .chat-history .my-message	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.chat .chat-history .my-message	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.chat .chat-history .my-message-away	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.chat .chat-history .other-message	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.chat .chat-history .other-message:after	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.chat .chat-history img	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	s
+.chat .chat-history img.profile-picture	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.chat .chat-message	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.chat .chat-message	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.chat .chat-message button	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	s
+.chat .chat-message button:hover	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	s
+.chat .chat-message textarea	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.chat .chat-message textarea	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	s
+.chat-header img	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.chat-history ul	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.chat-message button	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.clearfix:after	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.clearfix:after	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.container	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.container	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.controls	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.controls a	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.fa-th-list	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.fa-users	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.float-right	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.float-right	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.form	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.form .message	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.form .message a	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.form .register-form	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.form button	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.form button:active	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.form button:focus	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.form button:hover	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.form input	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.form-line	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.header	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.login-page	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.loginBtn	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.logout	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.me	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.me	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.message.error	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.message.success	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.not-found-error	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.offline	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.offline	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.online	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.online	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.people-list	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.people-list .about	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.people-list .fa-search	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.people-list .search	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.people-list .status	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.people-list img	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	s
+.people-list input	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	s
+.people-list ul	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	s
+.people-list ul li	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	s
+.room	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.room .room-create	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.room .room-create input	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.room .room-header	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.room .room-header .room-about	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.room .room-header .room-num-rooms	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.room .room-header .room-title	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.room .room-header img	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.room .room-list	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.room .room-list .room-item	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.room .room-list a	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.room-controls	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.room-controls a	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.room-create .message	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.room-create button	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.sidebar	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.social-buttons	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.social-buttons .social-buttons div span	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.social-buttons div	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.social-buttons div i	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.social-buttons div.fb	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.social-buttons div.tw	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.status .online	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.user	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	c
+.user img	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	s
+.users-list	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.users-list .about	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.users-list .name	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.users-list .search	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.users-list .status	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	c
+.users-list img	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.users-list input	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.users-list input:focus	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.users-list input:required	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.users-list input[type=password]	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.users-list input[type=text]	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.users-list li img	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.users-list ul	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+.users-list ul li	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+0	app/config/config.json	/^		"profileFields": ["id", "displayName", "photos"]$/;"	s	array:facebook.profileFields
+0	app/config/config.json	/^		"profileFields": ["id", "displayName", "photos"]$/;"	s	array:twitter.profileFields
+0	bower.json	/^    "**\/.*",$/;"	s	array:ignore
+0	bower.json	/^    "Mike Jakobsen"$/;"	s	array:authors
+0	bower.json	/^    "chat",$/;"	s	array:keywords
+0	dummy-data/dummy-data.json	/^        {$/;"	o	array:connections
+0	dummy-data/dummy-data.json	/^        {$/;"	o	array:messages
+0	dummy-data/messages.json	/^			{$/;"	o	array:0.connections
+0	dummy-data/messages.json	/^			{$/;"	o	array:0.messages
+0	dummy-data/messages.json	/^	{$/;"	o
+0	dummy-data/rooms.json	/^			{$/;"	o	array:0.connections
+0	dummy-data/rooms.json	/^	{$/;"	o
+0	messages.json	/^			{$/;"	o	array:0.connections
+0	messages.json	/^			{$/;"	o	array:0.messages
+0	messages.json	/^	{$/;"	o
+0	package.json	/^    "chat",$/;"	s	array:keywords
+1	app/config/config.json	/^		"profileFields": ["id", "displayName", "photos"]$/;"	s	array:facebook.profileFields
+1	app/config/config.json	/^		"profileFields": ["id", "displayName", "photos"]$/;"	s	array:twitter.profileFields
+1	bower.json	/^    "node_modules",$/;"	s	array:ignore
+1	bower.json	/^    "school",$/;"	s	array:keywords
+1	dummy-data/dummy-data.json	/^        {$/;"	o	array:connections
+1	dummy-data/dummy-data.json	/^        {$/;"	o	array:messages
+1	dummy-data/messages.json	/^			{$/;"	o	array:0.connections
+1	dummy-data/messages.json	/^			{$/;"	o	array:0.messages
+1	messages.json	/^			{$/;"	o	array:0.connections
+1	messages.json	/^			{$/;"	o	array:0.messages
+1	package.json	/^    "school",$/;"	s	array:keywords
+2	app/config/config.json	/^		"profileFields": ["id", "displayName", "photos"]$/;"	s	array:facebook.profileFields
+2	app/config/config.json	/^		"profileFields": ["id", "displayName", "photos"]$/;"	s	array:twitter.profileFields
+2	bower.json	/^    "bower_components",$/;"	s	array:ignore
+2	bower.json	/^    "mongoose",$/;"	s	array:keywords
+2	package.json	/^    "mongoose",$/;"	s	array:keywords
+3	bower.json	/^    "redis"$/;"	s	array:keywords
+3	bower.json	/^    "test",$/;"	s	array:ignore
+3	package.json	/^    "redis"$/;"	s	array:keywords
+4	bower.json	/^    "tests"$/;"	s	array:ignore
+:after	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+:after	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	s
+:before	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+:before	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	s
+Authenticated	app/models/user.js	/^    var isAuthenticated = function (req, res, next) {$/;"	c
+ById	app/models/room.js	/^    var findById = function (id, callback){$/;"	c
+ById	app/models/user.js	/^    var findById = function (id, callback){$/;"	c
+ByIdAndUpdate	app/models/room.js	/^       var findByIdAndUpdate = function(id, data, callback){$/;"	c
+Client	app/socket/index.js	/^        let pubClient = redis(port, host, { authPass: password });$/;"	c
+Client	app/socket/index.js	/^        let subClient = redis(port, host, { authPass: password, return_buffers: true, });$/;"	c
+DEFAULT_USER_PICTURE	app/database/schemas/user.js	/^    const DEFAULT_USER_PICTURE = '\/img\/user.jpg';$/;"	n
+Ele	src/js/main.js	/^                var inputEle = $("input[name='title']");$/;"	c
+Ele	src/js/main.js	/^                var textareaEle = $("textarea[name='message']");$/;"	c
+Events	app/socket/index.js	/^    var ioEvents = function(io) {$/;"	c
+FacebookStrategy	app/auth/index.js	/^    var FacebookStrategy  	= require('passport-facebook').Strategy;$/;"	c
+HTML	src/js/main.js	/^        encodeHTML: function (str){$/;"	c
+HTML	static/js/main.js	/^"use strict";var app={rooms:function(){var e=io("\/rooms",{transports:["websocket"]});e.on("conn/;"	c
+Handler	gulpfile.js	/^            errorHandler: function (error) {$/;"	c
+Id	app/database/schemas/user.js	/^        socialId: { type: String, default: null },$/;"	c
+LocalStrategy	app/auth/index.js	/^    var LocalStrategy 		= require('passport-local').Strategy;$/;"	c
+Message	src/js/main.js	/^        addMessage: function(message, users){$/;"	c
+Message	src/js/main.js	/^        saveMessage: function(message){$/;"	c
+Model	app/models/room.js	/^    var roomModel   = require('..\/database').models.room;$/;"	c
+Model	app/models/user.js	/^    var userModel = require('..\/database').models.user;$/;"	c
+Model	app/socket/index.js	/^    var messageModel = require('..\/database\/schemas\/message.js');$/;"	c
+Model	app/socket/index.js	/^    var roomModel = require('..\/database\/schemas\/room.js');$/;"	c
+Mongo	app/session/index.js	/^    var Mongo 		= require('..\/database');$/;"	c
+MongoStore	app/session/index.js	/^    var MongoStore	= require('connect-mongo')(session);$/;"	c
+Mongoose	app/database/index.js	/^    var Mongoose 	= require('mongoose');$/;"	c
+Mongoose	app/database/schemas/message.js	/^    var Mongoose = require('mongoose');$/;"	c
+Mongoose	app/database/schemas/room.js	/^    var Mongoose  = require('mongoose');$/;"	c
+Mongoose	app/database/schemas/user.js	/^    var Mongoose 	= require('mongoose');$/;"	c
+Mongoose	app/socket/index.js	/^    var Mongoose = require('mongoose');$/;"	c
+NumOfRooms	src/js/main.js	/^        updateNumOfRooms: function(){$/;"	c
+NumOfUsers	src/js/main.js	/^        updateNumOfUsers: function(){$/;"	c
+One	app/models/room.js	/^    var findOne = function (data, callback){$/;"	c
+One	app/models/user.js	/^    var findOne = function (data, callback){$/;"	c
+OrCreate	app/models/user.js	/^    var findOrCreate = function(data, callback){$/;"	c
+Parser	server.js	/^var bodyParser = require('body-parser');$/;"	c
+Password	app/database/schemas/user.js	/^    UserSchema.methods.validatePassword = function(password, callback) {$/;"	c
+Room	app/routes/index.js	/^    var Room = require('..\/models\/room');$/;"	c
+Room	app/socket/index.js	/^    var Room = require('..\/models\/room');$/;"	c
+RoomsList	src/js/main.js	/^        updateRoomsList: function(room){$/;"	c
+SALTROUNDS	app/database/schemas/user.js	/^    const SALTROUNDS = 10;$/;"	n
+Server	server.js	/^var ioServer = require('.\/app\/socket')(app);$/;"	c
+SocialAccount	app/auth/index.js	/^        var verifySocialAccount = function(tokenA, tokenB, data, done) {$/;"	c
+Sync	gulpfile.js	/^        browserSync  = require('browser-sync'),$/;"	c
+Top	src/js/main.js	/^            $(".chat-history").animate({ scrollTop: $('.chat-history')[0].scrollHeight}, 1000);$/;"	c
+TwitterStrategy	app/auth/index.js	/^    var TwitterStrategy  	= require('passport-twitter').Strategy;$/;"	c
+User	app/auth/index.js	/^    var User = require('..\/models\/user');$/;"	c
+User	app/models/room.js	/^    var User 		= require('..\/models\/user');$/;"	c
+User	app/models/room.js	/^    var addUser = function(room, socket, callback){$/;"	c
+User	app/models/room.js	/^    var removeUser = function(socket, callback){$/;"	c
+User	app/routes/index.js	/^    var User = require('..\/models\/user');$/;"	c
+Users	app/models/room.js	/^    var getUsers = function(room, socket, callback){$/;"	c
+UsersList	src/js/main.js	/^        updateUsersList: function(users, clear){$/;"	c
+__v	dummy-data/dummy-data.json	/^    "__v" : 0$/;"	n
+__v	dummy-data/dummy-data.json	/^    "__v" : 2$/;"	n
+__v	dummy-data/rooms.json	/^		"__v" : 1$/;"	n	object:0
+__v	messages.json	/^		"__v" : 18$/;"	n	object:0
+_id	dummy-data/dummy-data.json	/^            "_id" : ObjectId("57f52545bdea2efa75055255")$/;"	n	object:connections.0
+_id	dummy-data/dummy-data.json	/^            "_id" : ObjectId("57f52555bdea2efa75055257")$/;"	n	object:connections.1
+_id	dummy-data/dummy-data.json	/^            "_id" : ObjectId("57f52559bdea2efa75055258"),$/;"	n	object:messages.0
+_id	dummy-data/dummy-data.json	/^            "_id" : ObjectId("57f52562bdea2efa75055259"),$/;"	n	object:messages.1
+_id	dummy-data/dummy-data.json	/^    "_id" : ObjectId("57f52538bdea2efa75055253"),$/;"	n
+_id	dummy-data/dummy-data.json	/^    "_id" : ObjectId("57f52541bdea2efa75055254"),$/;"	n
+_id	dummy-data/messages.json	/^				"_id" : ObjectId("57f781cdbb48c262d41c26d3")$/;"	n	object:0.connections.0
+_id	dummy-data/messages.json	/^				"_id" : ObjectId("57f786966bc0bf892003e7aa"),$/;"	n	object:0.messages.0
+_id	dummy-data/messages.json	/^				"_id" : ObjectId("57f7869d6bc0bf892003e7ab"),$/;"	n	object:0.messages.1
+_id	dummy-data/messages.json	/^				"_id" : ObjectId("57f786f46bc0bf892003e7b0")$/;"	n	object:0.connections.1
+_id	dummy-data/messages.json	/^		"_id" : ObjectId("57f781cbbb48c262d41c26d2"),$/;"	n	object:0
+_id	dummy-data/rooms.json	/^				"_id" : ObjectId("57f781cdbb48c262d41c26d3")$/;"	n	object:0.connections.0
+_id	dummy-data/rooms.json	/^		"_id" : ObjectId("57f781cbbb48c262d41c26d2"),$/;"	n	object:0
+_id	messages.json	/^				"_id" : ObjectId("57f781cdbb48c262d41c26d3")$/;"	n	object:0.connections.0
+_id	messages.json	/^				"_id" : ObjectId("57f786966bc0bf892003e7aa"),$/;"	n	object:0.messages.0
+_id	messages.json	/^				"_id" : ObjectId("57f7869d6bc0bf892003e7ab"),$/;"	n	object:0.messages.1
+_id	messages.json	/^				"_id" : ObjectId("57f786f46bc0bf892003e7b0")$/;"	n	object:0.connections.1
+_id	messages.json	/^		"_id" : ObjectId("57f781cbbb48c262d41c26d2"),$/;"	n	object:0
+addMessage	src/js/main.js	/^        addMessage: function(message, users){$/;"	m
+addUser	app/models/room.js	/^    var addUser = function(room, socket, callback){$/;"	f
+addUser	app/socket/index.js	/^                        Room.addUser(room, socket, function(err, newRoom){$/;"	f
+author	package.json	/^  "author": "Mike Jakobsen",$/;"	s
+authors	bower.json	/^  "authors": [$/;"	a
+bcrypt-nodejs	package.json	/^    "bcrypt-nodejs": "0.0.3",$/;"	s	object:dependencies
+body	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+body	static/css/chatroom.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato:400,700);@import url(https:\/\/fonts/;"	s
+body-parser	package.json	/^    "body-parser": "^1.15.2",$/;"	s	object:dependencies
+bootstrap	bower.json	/^    "bootstrap": "^3.3.7",$/;"	s	object:dependencies
+browser-sync	package.json	/^    "browser-sync": "^2.6.5",$/;"	s	object:devDependencies
+callbackURL	app/config/config.json	/^		"callbackURL": "\/auth\/facebook\/callback",$/;"	s	object:facebook
+callbackURL	app/config/config.json	/^		"callbackURL": "\/auth\/twitter\/callback",$/;"	s	object:twitter
+chat	src/js/main.js	/^    chat: function(roomId, username){$/;"	m
+clientID	app/config/config.json	/^		"clientID": "183378462070142",$/;"	s	object:facebook
+clientSecret	app/config/config.json	/^		"clientSecret": "3db6bfef3022df8a6dbe99eb4ef6a696",$/;"	s	object:facebook
+compare	app/database/schemas/user.js	/^        bcrypt.compare(password, this.password, function(err, isMatch) {$/;"	f
+connect-flash	package.json	/^    "connect-flash": "^0.1.1",$/;"	s	object:dependencies
+connect-mongo	package.json	/^    "connect-mongo": "^1.3.2",$/;"	s	object:dependencies
+connections	app/database/schemas/room.js	/^        connections: { type: [{ userId: String, socketId: String }]},$/;"	o
+connections	dummy-data/dummy-data.json	/^    "connections" : [ $/;"	a
+connections	dummy-data/messages.json	/^		"connections" : [$/;"	a	object:0
+connections	dummy-data/rooms.json	/^		"connections" : [$/;"	a	object:0
+connections	messages.json	/^		"connections" : [$/;"	a	object:0
+consumerKey	app/config/config.json	/^		"consumerKey": "2vZJ0NoV9nweVfbUdWIK4L2vL",$/;"	s	object:twitter
+consumerSecret	app/config/config.json	/^		"consumerSecret": "kUrdhFTQd8ihrqc6teld8LqF9sQh3HcUwoGZlLPVsav6ka8sYT",$/;"	s	object:twitter
+content	app/database/schemas/message.js	/^        content: { type: String, required: true},$/;"	o
+content	app/database/schemas/room.js	/^        content: { type: String, required: true},$/;"	o
+content	dummy-data/dummy-data.json	/^            "content" : "Hej - velkommen til..\\n",$/;"	s	object:messages.1
+content	dummy-data/dummy-data.json	/^            "content" : "Hej",$/;"	s	object:messages.0
+content	dummy-data/messages.json	/^				"content" : "Hej Mike",$/;"	s	object:0.messages.0
+content	dummy-data/messages.json	/^				"content" : "Hej du",$/;"	s	object:0.messages.1
+content	messages.json	/^				"content" : "Hej Mike",$/;"	s	object:0.messages.0
+content	messages.json	/^				"content" : "Hej du",$/;"	s	object:0.messages.1
+create	app/models/room.js	/^    var create = function (data, callback){$/;"	f
+create	app/models/user.js	/^    var create = function (data, callback){$/;"	f
+create	app/routes/index.js	/^                    User.create(credentials, function(err, newUser){$/;"	f
+date	app/database/schemas/message.js	/^        date: { type: Date, default: Date.now },$/;"	o
+date	app/database/schemas/room.js	/^        date: { type: Date, default: Date.now },$/;"	o
+date	dummy-data/dummy-data.json	/^            "date" : ISODate("2016-10-05T16:07:53.747Z")$/;"	n	object:messages.0
+date	dummy-data/dummy-data.json	/^            "date" : ISODate("2016-10-05T16:08:02.831Z")$/;"	n	object:messages.1
+date	dummy-data/messages.json	/^				"date" : ISODate("2016-10-07T11:27:18.387Z")$/;"	n	object:0.messages.0
+date	dummy-data/messages.json	/^				"date" : ISODate("2016-10-07T11:27:25.164Z")$/;"	n	object:0.messages.1
+date	messages.json	/^				"date" : ISODate("2016-10-07T11:27:18.387Z")$/;"	n	object:0.messages.0
+date	messages.json	/^				"date" : ISODate("2016-10-07T11:27:25.164Z")$/;"	n	object:0.messages.1
+dependencies	bower.json	/^  "dependencies": {$/;"	o
+dependencies	package.json	/^  "dependencies": {$/;"	o
+description	bower.json	/^  "description": "Mean Stack School Project - Using Express, Mongoose, and Redis",$/;"	s
+description	package.json	/^  "description": "Mean Stack School Project - Using Express, Mongoose, and Redis",$/;"	s
+deserializeUser	app/auth/index.js	/^        passport.deserializeUser(function(id, done) {$/;"	f
+devDependencies	package.json	/^  "devDependencies": {$/;"	o
+ejs	package.json	/^    "ejs": "^2.5.2",$/;"	s	object:dependencies
+encodeHTML	src/js/main.js	/^        encodeHTML: function (str){$/;"	m
+errorHandler	gulpfile.js	/^            errorHandler: function (error) {$/;"	m
+every	app/models/room.js	/^            rooms.every(function(room){$/;"	f
+exports	app/database/index.js	/^    module.exports = { Mongoose, $/;"	o
+exports	app/models/room.js	/^    module.exports = { $/;"	o
+exports	app/models/user.js	/^    module.exports = { $/;"	o
+express	package.json	/^    "express": "^4.14.0",$/;"	s	object:dependencies
+express-session	package.json	/^    "express-session": "^1.14.1",$/;"	s	object:dependencies
+facebook	app/config/config.json	/^	"facebook": {$/;"	o
+find	app/models/room.js	/^        find(function(err, rooms){$/;"	f
+find	app/models/room.js	/^    var find = function (data, callback){$/;"	f
+find	app/routes/index.js	/^        Room.find(function(err, rooms){$/;"	f
+findById	app/auth/index.js	/^            User.findById(id, function (err, user) {$/;"	f
+findById	app/models/room.js	/^            User.findById(userId, function(err, user){$/;"	f
+findById	app/models/room.js	/^    var findById = function (id, callback){$/;"	f
+findById	app/models/user.js	/^    var findById = function (id, callback){$/;"	f
+findById	app/routes/index.js	/^        Room.findById(roomId, function(err, room){$/;"	f
+findById	app/socket/index.js	/^                Room.findById(roomId, function(err, room){$/;"	f
+findByIdAndUpdate	app/models/room.js	/^       var findByIdAndUpdate = function(id, data, callback){$/;"	f
+findOne	app/models/room.js	/^    var findOne = function (data, callback){$/;"	f
+findOne	app/models/user.js	/^        findOne({'socialId': data.id}, function(err, user){$/;"	f
+findOne	app/models/user.js	/^    var findOne = function (data, callback){$/;"	f
+findOrCreate	app/auth/index.js	/^            User.findOrCreate(data, function (err, user) {$/;"	f
+findOrCreate	app/models/user.js	/^    var findOrCreate = function(data, callback){$/;"	f
+font-awesome	bower.json	/^    "font-awesome": "^4.6.3",$/;"	s	object:dependencies
+for	src/js/main.js	/^            for(var user of users) {$/;"	f
+forEach	app/models/room.js	/^                room.connections.forEach(function(conn, i){$/;"	f
+forEach	app/models/room.js	/^        room.connections.forEach(function(conn){$/;"	f
+forEach	app/models/room.js	/^        users.forEach(function(userId, i){$/;"	f
+function	app/auth/index.js	/^                User.findOne({ username: new RegExp(username, 'i'), socialId: null }, function(e/;"	f
+function	app/auth/index.js	/^            function(username, password, done) {$/;"	f
+function	app/auth/index.js	/^        var verifySocialAccount = function(tokenA, tokenB, data, done) {$/;"	f
+function	app/auth/index.js	/^    var init = function(){$/;"	f
+function	app/auth/index.js	/^(function () {$/;"	f
+function	app/config/index.js	/^    var init = function () {$/;"	f
+function	app/config/index.js	/^(function () {$/;"	f
+function	app/database/index.js	/^(function () {$/;"	f
+function	app/database/schemas/message.js	/^(function () {$/;"	f
+function	app/database/schemas/room.js	/^(function () {$/;"	f
+function	app/database/schemas/user.js	/^    UserSchema.methods.validatePassword = function(password, callback) {$/;"	f
+function	app/database/schemas/user.js	/^(function () {$/;"	f
+function	app/models/room.js	/^       var findByIdAndUpdate = function(id, data, callback){$/;"	f
+function	app/models/room.js	/^    var addUser = function(room, socket, callback){$/;"	f
+function	app/models/room.js	/^    var create = function (data, callback){$/;"	f
+function	app/models/room.js	/^    var find = function (data, callback){$/;"	f
+function	app/models/room.js	/^    var findById = function (id, callback){$/;"	f
+function	app/models/room.js	/^    var findOne = function (data, callback){$/;"	f
+function	app/models/room.js	/^    var getUsers = function(room, socket, callback){$/;"	f
+function	app/models/room.js	/^    var removeUser = function(socket, callback){$/;"	f
+function	app/models/room.js	/^(function () {$/;"	f
+function	app/models/user.js	/^                }, function(err, newUser){$/;"	f
+function	app/models/user.js	/^    var create = function (data, callback){$/;"	f
+function	app/models/user.js	/^    var findById = function (id, callback){$/;"	f
+function	app/models/user.js	/^    var findOne = function (data, callback){$/;"	f
+function	app/models/user.js	/^    var findOrCreate = function(data, callback){$/;"	f
+function	app/models/user.js	/^    var isAuthenticated = function (req, res, next) {$/;"	f
+function	app/models/user.js	/^(function () {$/;"	f
+function	app/routes/index.js	/^            User.findOne({'username': new RegExp('^' + req.body.username + '$', 'i'), 'socialId'/;"	f
+function	app/routes/index.js	/^(function () {$/;"	f
+function	app/session/index.js	/^    var init = function () {$/;"	f
+function	app/session/index.js	/^(function () {$/;"	f
+function	app/socket/index.js	/^                                           function (err, room) {$/;"	f
+function	app/socket/index.js	/^                        }, function(err, newRoom){$/;"	f
+function	app/socket/index.js	/^                Room.findOne({'title': new RegExp('^' + title + '$', 'i')}, function(err, room){$/;"	f
+function	app/socket/index.js	/^    var init = function(app){$/;"	f
+function	app/socket/index.js	/^    var ioEvents = function(io) {$/;"	f
+function	app/socket/index.js	/^(function () {$/;"	f
+function	gulpfile.js	/^            errorHandler: function (error) {$/;"	f
+function	gulpfile.js	/^(function () {$/;"	f
+function	src/js/main.js	/^        addMessage: function(message, users){$/;"	f
+function	src/js/main.js	/^        encodeHTML: function (str){$/;"	f
+function	src/js/main.js	/^        saveMessage: function(message){$/;"	f
+function	src/js/main.js	/^        updateNumOfRooms: function(){$/;"	f
+function	src/js/main.js	/^        updateNumOfUsers: function(){$/;"	f
+function	src/js/main.js	/^        updateRoomsList: function(room){$/;"	f
+function	src/js/main.js	/^        updateUsersList: function(users, clear){$/;"	f
+function	src/js/main.js	/^    chat: function(roomId, username){$/;"	f
+function	src/js/main.js	/^    rooms: function(){$/;"	f
+function	src/js/rooms.js	/^    $(function(){app.rooms()});$/;"	f
+function	src/js/rooms.js	/^(function () {$/;"	f
+function	static/js/main.js	/^"use strict";var app={rooms:function(){var e=io("\/rooms",{transports:["websocket"]});e.on("conn/;"	f
+function	static/js/rooms.js	/^"use strict";!function(){$(function(){app.rooms()})}();/;"	f
+genSalt	app/database/schemas/user.js	/^        bcrypt.genSalt(SALTROUNDS, function(err, salt) {$/;"	f
+get	app/routes/index.js	/^    router.get('\/', function(req, res, next) {$/;"	f
+get	app/routes/index.js	/^    router.get('\/chat\/:id', [User.isAuthenticated, function(req, res, next) {$/;"	f
+get	app/routes/index.js	/^    router.get('\/rooms', [User.isAuthenticated, function(req, res, next) {$/;"	f
+get	app/routes/index.js	/^    router.get('\/ses', function(req, res, next) {$/;"	f
+getUsers	app/models/room.js	/^    var getUsers = function(room, socket, callback){$/;"	f
+getUsers	app/socket/index.js	/^                            Room.getUsers(newRoom, socket, function(err, users, countUserInRoom)/;"	f
+gulp	package.json	/^    "gulp": "3.8.11",$/;"	s	object:devDependencies
+gulp-autoprefixer	package.json	/^    "gulp-autoprefixer": "2.1.0",$/;"	s	object:devDependencies
+gulp-babel	package.json	/^    "gulp-babel": "5.1.0",$/;"	s	object:devDependencies
+gulp-beautify	package.json	/^    "gulp-beautify": "^2.0.0",$/;"	s	object:devDependencies
+gulp-cache	package.json	/^    "gulp-cache": "0.2.8",$/;"	s	object:devDependencies
+gulp-cssmin	package.json	/^    "gulp-cssmin": "^0.1.7",$/;"	s	object:devDependencies
+gulp-imagemin	package.json	/^    "gulp-imagemin": "2.2.1",$/;"	s	object:devDependencies
+gulp-jshint	package.json	/^    "gulp-jshint": "1.10.0",$/;"	s	object:devDependencies
+gulp-nodemon	package.json	/^    "gulp-nodemon": "^2.2.1",$/;"	s	object:devDependencies
+gulp-plumber	package.json	/^    "gulp-plumber": "1.0.0",$/;"	s	object:devDependencies
+gulp-rename	package.json	/^    "gulp-rename": "1.2.2",$/;"	s	object:devDependencies
+gulp-sass	package.json	/^    "gulp-sass": "^2.3.2",$/;"	s	object:devDependencies
+gulp-uglify	package.json	/^    "gulp-uglify": "^2.0.0",$/;"	s	object:devDependencies
+hash	app/database/schemas/user.js	/^            bcrypt.hash(user.password, salt, null, function(err, hash) {$/;"	f
+helpers	src/js/main.js	/^    helpers: {$/;"	o
+helpers	static/js/main.js	/^"use strict";var app={rooms:function(){var e=io("\/rooms",{transports:["websocket"]});e.on("conn/;"	o
+homepage	bower.json	/^  "homepage": "http:\/\/www.mikejakobsen.com",$/;"	s
+host	app/config/config.json	/^		"host": "127.0.0.1",$/;"	s	object:redis
+if	app/auth/index.js	/^                        if (!isMatch){$/;"	f
+if	app/auth/index.js	/^                        if (err) { return done(err); }$/;"	f
+if	app/auth/index.js	/^                    if (!user) {$/;"	f
+if	app/auth/index.js	/^                    if (err) { return done(err); }$/;"	f
+if	app/auth/index.js	/^                if (err) { return done(err); }$/;"	f
+if	app/database/schemas/user.js	/^        if(!user.picture){$/;"	f
+if	app/models/room.js	/^                    if(conn.socketId === socket.id){$/;"	f
+if	app/models/room.js	/^                    if(conn.userId === userId){$/;"	f
+if	app/models/room.js	/^                if (err) { return callback(err); }$/;"	f
+if	app/models/room.js	/^                if(!pass) {$/;"	f
+if	app/models/room.js	/^                if(i + 1 === users.length){$/;"	f
+if	app/models/room.js	/^            if(!vis[conn.userId]){$/;"	f
+if	app/models/room.js	/^            if(conn.userId === userId){$/;"	f
+if	app/models/room.js	/^            if(err) { return callback(err); }$/;"	f
+if	app/models/user.js	/^            if(err) { return callback(err); }$/;"	f
+if	app/models/user.js	/^            if(user){$/;"	f
+if	app/routes/index.js	/^                if(user){$/;"	f
+if	app/routes/index.js	/^            if(!room){$/;"	f
+if	app/routes/index.js	/^        if(credentials.username === '' || credentials.password === ''){$/;"	f
+if	app/session/index.js	/^        if(process.env.NODE_ENV === 'production') {$/;"	f
+if	app/socket/index.js	/^                                               if (err) {$/;"	f
+if	app/socket/index.js	/^                                if(countUserInRoom === 1){$/;"	f
+if	app/socket/index.js	/^                        if(socket.request.session.passport == null){$/;"	f
+if	app/socket/index.js	/^                    if(!room){$/;"	f
+if	app/socket/index.js	/^                    if(countUserInRoom === 1){$/;"	f
+if	app/socket/index.js	/^                    if(room){$/;"	f
+if	app/socket/index.js	/^                if(socket.request.session.passport == null){$/;"	f
+if	src/js/main.js	/^                if(room.error != null){$/;"	f
+if	src/js/main.js	/^                if(users.error != null){$/;"	f
+if	src/js/main.js	/^            if (message.username != message.username) {$/;"	f
+if	src/js/main.js	/^            if(clear != null && clear == true){$/;"	f
+if	src/js/main.js	/^            if(html === ''){ return; }$/;"	f
+if	src/js/main.js	/^            if(users.constructor !== Array){$/;"	f
+ignore	bower.json	/^  "ignore": [$/;"	a
+init	app/auth/index.js	/^    var init = function(){$/;"	f
+init	app/config/index.js	/^    var init = function () {$/;"	f
+init	app/session/index.js	/^    var init = function () {$/;"	f
+init	app/socket/index.js	/^    var init = function(app){$/;"	f
+ioEvents	app/socket/index.js	/^    var ioEvents = function(io) {$/;"	f
+isAuthenticated	app/models/user.js	/^    var isAuthenticated = function (req, res, next) {$/;"	f
+keywords	bower.json	/^  "keywords": [$/;"	a
+keywords	package.json	/^  "keywords": [$/;"	a
+label	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+label::before	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+license	bower.json	/^  "license": "ISC",$/;"	s
+license	package.json	/^  "license": "ISC",$/;"	s
+main	bower.json	/^  "main": "server.js",$/;"	s
+main	package.json	/^  "main": "server.js",$/;"	s
+messages	dummy-data/dummy-data.json	/^    "messages" : [ $/;"	a
+messages	dummy-data/messages.json	/^		"messages" : [$/;"	a	object:0
+messages	dummy-data/rooms.json	/^		"messages" : [ ],$/;"	a	object:0
+messages	messages.json	/^		"messages" : [$/;"	a	object:0
+models	app/database/index.js	/^        models: {$/;"	o
+moment	package.json	/^    "moment": "^2.15.1",$/;"	s	object:dependencies
+mongoose	package.json	/^    "mongoose": "^4.6.2",$/;"	s	object:dependencies
+name	bower.json	/^  "name": "meanstackchat",$/;"	s
+name	package.json	/^  "name": "meanstackchat",$/;"	s
+nodemon	package.json	/^    "nodemon": "^1.10.2"$/;"	s	object:devDependencies
+on	app/database/index.js	/^    Mongoose.connection.on('error', function(err) {$/;"	f
+on	app/socket/index.js	/^            socket.on('createRoom', function(title) {$/;"	f
+on	app/socket/index.js	/^            socket.on('disconnect', function() {$/;"	f
+on	app/socket/index.js	/^            socket.on('join', function(roomId) {$/;"	f
+on	app/socket/index.js	/^            socket.on('newMessage', function(roomId, message) {$/;"	f
+on	app/socket/index.js	/^        io.of('\/chatroom').on('connection', function(socket) {$/;"	f
+on	app/socket/index.js	/^        io.of('\/rooms').on('connection', function(socket) {$/;"	f
+on	src/js/main.js	/^            $(".chat-message button").on('click', function() {$/;"	f
+on	src/js/main.js	/^            $('.room-create button').on('click', function() {$/;"	f
+on	src/js/main.js	/^            socket.on('addMessage', function(message) {$/;"	f
+on	src/js/main.js	/^            socket.on('removeUser', function(userId) {$/;"	f
+on	src/js/main.js	/^            socket.on('updateRoomsList', function(room) {$/;"	f
+on	src/js/main.js	/^            socket.on('updateUsersList', function(users, clear) {$/;"	f
+on	src/js/main.js	/^        socket.on('connect', function () {$/;"	f
+passport	package.json	/^    "passport": "^0.3.2",$/;"	s	object:dependencies
+passport-facebook	package.json	/^    "passport-facebook": "^2.1.1",$/;"	s	object:dependencies
+passport-local	package.json	/^    "passport-local": "^1.0.0",$/;"	s	object:dependencies
+passport-twitter	package.json	/^    "passport-twitter": "^1.0.4",$/;"	s	object:dependencies
+password	app/config/config.json	/^		"password": ""$/;"	s	object:redis
+password	app/database/schemas/user.js	/^        password: { type: String, default: null },$/;"	o
+password	dummy-data/dummy-data.json	/^    "password" : null,$/;"	z
+picture	app/database/schemas/user.js	/^        picture:  { type: String, default:  DEFAULT_USER_PICTURE}$/;"	o
+picture	dummy-data/dummy-data.json	/^    "picture" : "https:\/\/scontent.xx.fbcdn.net\/v\/t1.0-1\/c13.0.50.50\/p50x50\/312809_2005127/;"	s
+port	app/config/config.json	/^		"port": 6379,$/;"	n	object:redis
+post	app/routes/index.js	/^    router.post('\/register', function(req, res, next) {$/;"	f
+pre	app/database/schemas/user.js	/^    UserSchema.pre('save', function(next) {$/;"	f
+private	bower.json	/^  "private": true,$/;"	b
+profileFields	app/config/config.json	/^		"profileFields": ["id", "displayName", "photos"]$/;"	a	object:facebook
+profileFields	app/config/config.json	/^		"profileFields": ["id", "displayName", "photos"]$/;"	a	object:twitter
+redis	app/config/config.json	/^	"redis": {$/;"	o
+redis	package.json	/^    "redis": "^2.6.2",$/;"	s	object:dependencies
+removeUser	app/models/room.js	/^    var removeUser = function(socket, callback){$/;"	f
+removeUser	app/socket/index.js	/^                Room.removeUser(socket, function(err, room, userId, countUserInRoom){$/;"	f
+repository	package.json	/^  "repository": {$/;"	o
+reset-css	bower.json	/^    "reset-css": "^2.2.0"$/;"	s	object:dependencies
+rooms	src/js/main.js	/^    rooms: function(){$/;"	m
+rooms	static/js/main.js	/^"use strict";var app={rooms:function(){var e=io("\/rooms",{transports:["websocket"]});e.on("conn/;"	m
+save	app/models/room.js	/^                    room.save(function(err){$/;"	f
+saveMessage	src/js/main.js	/^        saveMessage: function(message){$/;"	m
+scripts	package.json	/^  "scripts": {$/;"	o
+serializeUser	app/auth/index.js	/^        passport.serializeUser(function(user, done) {$/;"	f
+sessionSecret	app/config/config.json	/^	"sessionSecret": "secret",$/;"	s
+socialId	app/database/schemas/user.js	/^        socialId: { type: String, default: null },$/;"	o
+socialId	dummy-data/dummy-data.json	/^    "socialId" : "secret",$/;"	s
+socket.io	package.json	/^    "socket.io": "^1.4.8",$/;"	s	object:dependencies
+socket.io-redis	package.json	/^    "socket.io-redis": "^1.1.1",$/;"	s	object:dependencies
+socketId	dummy-data/dummy-data.json	/^            "socketId" : "\/chatroom#Bt13VHkwOqZeX80nAABA",$/;"	s	object:connections.0
+socketId	dummy-data/dummy-data.json	/^            "socketId" : "\/chatroom#gmA6jGNdK_Bp_gjlAABC",$/;"	s	object:connections.1
+socketId	dummy-data/messages.json	/^				"socketId" : "\/chatroom#79Md-MM96uFdvJUoAAAC",$/;"	s	object:0.connections.0
+socketId	dummy-data/messages.json	/^				"socketId" : "\/chatroom#vg6jra-g0KlGrDVHAAAS",$/;"	s	object:0.connections.1
+socketId	dummy-data/rooms.json	/^				"socketId" : "\/chatroom#79Md-MM96uFdvJUoAAAC",$/;"	s	object:0.connections.0
+socketId	messages.json	/^				"socketId" : "\/chatroom#79Md-MM96uFdvJUoAAAC",$/;"	s	object:0.connections.0
+socketId	messages.json	/^				"socketId" : "\/chatroom#vg6jra-g0KlGrDVHAAAS",$/;"	s	object:0.connections.1
+start	package.json	/^    "start": "node server.js"$/;"	s	object:scripts
+task	gulpfile.js	/^    gulp.task('default', function(){$/;"	f
+task	gulpfile.js	/^    gulp.task('hint', function(){$/;"	f
+task	gulpfile.js	/^    gulp.task('images', function(){$/;"	f
+task	gulpfile.js	/^    gulp.task('scripts', function(){$/;"	f
+task	gulpfile.js	/^    gulp.task('styles', function(){$/;"	f
+task	gulpfile.js	/^    gulp.task('watch', function(){$/;"	f
+test	package.json	/^    "test": "echo \\"Error: no test specified\\" && exit 1",$/;"	s	object:scripts
+title	app/database/schemas/room.js	/^        title: { type: String, required: true, match: validateTitle },$/;"	o
+title	dummy-data/dummy-data.json	/^    "title" : "MeanJSChat",$/;"	s
+title	dummy-data/messages.json	/^		"title" : "Chat",$/;"	s	object:0
+title	dummy-data/rooms.json	/^		"title" : "Chat",$/;"	s	object:0
+title	messages.json	/^		"title" : "Chat",$/;"	s	object:0
+twitter	app/config/config.json	/^	"twitter": {$/;"	o
+type	package.json	/^    "type": "git",$/;"	s	object:repository
+ul	static/css/app.css	/^@import url(https:\/\/fonts.googleapis.com\/css?family=Lato|Roboto);.users-list,.users-list .abo/;"	s
+updateNumOfRooms	src/js/main.js	/^        updateNumOfRooms: function(){$/;"	m
+updateNumOfUsers	src/js/main.js	/^        updateNumOfUsers: function(){$/;"	m
+updateRoomsList	src/js/main.js	/^        updateRoomsList: function(room){$/;"	m
+updateUsersList	src/js/main.js	/^        updateUsersList: function(users, clear){$/;"	m
+url	package.json	/^    "url": "http:\/\/www.github.com\/mikejakobsen\/meanchat"$/;"	s	object:repository
+use	server.js	/^app.use(function(req, res, next) {$/;"	f
+userId	dummy-data/dummy-data.json	/^            "userId" : "57f52538bdea2efa75055253",$/;"	s	object:connections.0
+userId	dummy-data/dummy-data.json	/^            "userId" : "57f5254ebdea2efa75055256",$/;"	s	object:connections.1
+userId	dummy-data/messages.json	/^				"userId" : "57f77a97bb48c262d41c26d1",$/;"	s	object:0.connections.0
+userId	dummy-data/messages.json	/^				"userId" : "57f786296bc0bf892003e7a6",$/;"	s	object:0.connections.1
+userId	dummy-data/rooms.json	/^				"userId" : "57f77a97bb48c262d41c26d1",$/;"	s	object:0.connections.0
+userId	messages.json	/^				"userId" : "57f77a97bb48c262d41c26d1",$/;"	s	object:0.connections.0
+userId	messages.json	/^				"userId" : "57f786296bc0bf892003e7a6",$/;"	s	object:0.connections.1
+username	app/database/schemas/message.js	/^        username: { type: String, required: true}$/;"	o
+username	app/database/schemas/room.js	/^        username: { type: String, required: true}$/;"	o
+username	app/database/schemas/user.js	/^        username: { type: String, required: true, unique: true, dropDups: true},$/;"	o
+username	dummy-data/dummy-data.json	/^            "username" : "Mike Jakobsen",$/;"	s	object:messages.0
+username	dummy-data/dummy-data.json	/^            "username" : "Sarah Frost",$/;"	s	object:messages.1
+username	dummy-data/dummy-data.json	/^    "username" : "Mike Jakobsen",$/;"	s
+username	dummy-data/messages.json	/^				"username" : "Mike Jakobsen",$/;"	s	object:0.messages.1
+username	dummy-data/messages.json	/^				"username" : "sarah",$/;"	s	object:0.messages.0
+username	messages.json	/^				"username" : "Mike Jakobsen",$/;"	s	object:0.messages.1
+username	messages.json	/^				"username" : "sarah",$/;"	s	object:0.messages.0
+validatePassword	app/auth/index.js	/^                    user.validatePassword(password, function(err, isMatch) {$/;"	f
+validatePassword	app/database/schemas/user.js	/^    UserSchema.methods.validatePassword = function(password, callback) {$/;"	f
+verifySocialAccount	app/auth/index.js	/^        var verifySocialAccount = function(tokenA, tokenB, data, done) {$/;"	f
+version	package.json	/^  "version": "0.0.1",$/;"	s
+winston	package.json	/^    "winston": "^2.2.0"$/;"	s	object:dependencies
