@@ -203,7 +203,7 @@ Model	app/socket/index.js	/^    var messageModel = require('..\/database\/schema
 Model	app/socket/index.js	/^    var roomModel = require('..\/database\/schemas\/room.js');$/;"	c
 Mongo	app/session/index.js	/^    var Mongo 		= require('..\/database');$/;"	c
 MongoStore	app/session/index.js	/^    var MongoStore	= require('connect-mongo')(session);$/;"	c
-Mongoose	app/database/index.js	/^    var Mongoose 	= require('mongoose');$/;"	c
+Mongoose	app/database/index.js	/^  var Mongoose 	= require('mongoose')$/;"	c
 Mongoose	app/database/schemas/message.js	/^    var Mongoose = require('mongoose');$/;"	c
 Mongoose	app/database/schemas/room.js	/^    var Mongoose  = require('mongoose');$/;"	c
 Mongoose	app/database/schemas/user.js	/^    var Mongoose 	= require('mongoose');$/;"	c
@@ -308,7 +308,7 @@ ejs	package.json	/^    "ejs": "^2.5.2",$/;"	s	object:dependencies
 encodeHTML	src/js/main.js	/^        encodeHTML: function (str){$/;"	m
 errorHandler	gulpfile.js	/^            errorHandler: function (error) {$/;"	m
 every	app/models/room.js	/^            rooms.every(function(room){$/;"	f
-exports	app/database/index.js	/^    module.exports = { Mongoose, $/;"	o
+exports	app/database/index.js	/^  module.exports = { Mongoose,$/;"	o
 exports	app/models/room.js	/^    module.exports = { $/;"	o
 exports	app/models/user.js	/^    module.exports = { $/;"	o
 express	package.json	/^    "express": "^4.14.0",$/;"	s	object:dependencies
@@ -411,7 +411,7 @@ hash	app/database/schemas/user.js	/^            bcrypt.hash(user.password, salt,
 helpers	src/js/main.js	/^    helpers: {$/;"	o
 helpers	static/js/main.js	/^"use strict";var app={rooms:function(){var e=io("\/rooms",{transports:["websocket"]});e.on("conn/;"	o
 homepage	bower.json	/^  "homepage": "http:\/\/www.mikejakobsen.com",$/;"	s
-host	app/config/config.json	/^		"host": "127.0.0.1",$/;"	s	object:redis
+host	app/config/config.json	/^		"host": "redis-12984.c8.us-east-1-2.ec2.cloud.redislabs.com",$/;"	s	object:redis
 if	app/auth/index.js	/^                        if (!isMatch){$/;"	f
 if	app/auth/index.js	/^                        if (err) { return done(err); }$/;"	f
 if	app/auth/index.js	/^                    if (!user) {$/;"	f
@@ -470,7 +470,7 @@ mongoose	package.json	/^    "mongoose": "^4.6.2",$/;"	s	object:dependencies
 name	bower.json	/^  "name": "meanstackchat",$/;"	s
 name	package.json	/^  "name": "meanstackchat",$/;"	s
 nodemon	package.json	/^    "nodemon": "^1.10.2"$/;"	s	object:devDependencies
-on	app/database/index.js	/^    Mongoose.connection.on('error', function(err) {$/;"	f
+on	app/database/index.js	/^  Mongoose.connection.on('error', function (err) {$/;"	f
 on	app/socket/index.js	/^            socket.on('createRoom', function(title) {$/;"	f
 on	app/socket/index.js	/^            socket.on('disconnect', function() {$/;"	f
 on	app/socket/index.js	/^            socket.on('join', function(roomId) {$/;"	f
@@ -488,12 +488,12 @@ passport	package.json	/^    "passport": "^0.3.2",$/;"	s	object:dependencies
 passport-facebook	package.json	/^    "passport-facebook": "^2.1.1",$/;"	s	object:dependencies
 passport-local	package.json	/^    "passport-local": "^1.0.0",$/;"	s	object:dependencies
 passport-twitter	package.json	/^    "passport-twitter": "^1.0.4",$/;"	s	object:dependencies
-password	app/config/config.json	/^		"password": ""$/;"	s	object:redis
+password	app/config/config.json	/^		"password": "Adgangskode123"$/;"	s	object:redis
 password	app/database/schemas/user.js	/^        password: { type: String, default: null },$/;"	o
 password	dummy-data/dummy-data.json	/^    "password" : null,$/;"	z
 picture	app/database/schemas/user.js	/^        picture:  { type: String, default:  DEFAULT_USER_PICTURE}$/;"	o
 picture	dummy-data/dummy-data.json	/^    "picture" : "https:\/\/scontent.xx.fbcdn.net\/v\/t1.0-1\/c13.0.50.50\/p50x50\/312809_2005127/;"	s
-port	app/config/config.json	/^		"port": 6379,$/;"	n	object:redis
+port	app/config/config.json	/^		"port": 12984,$/;"	n	object:redis
 post	app/routes/index.js	/^    router.post('\/register', function(req, res, next) {$/;"	f
 pre	app/database/schemas/user.js	/^    UserSchema.pre('save', function(next) {$/;"	f
 private	bower.json	/^  "private": true,$/;"	b

@@ -45,4 +45,4 @@ app.use(function(req, res, next) {
 */
 
 // Lyt på port 3000
-ioServer.listen(3000);
+ioServer.listen(process.env.PORT || 3000);
